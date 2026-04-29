@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bwww8166de8bw"]
+
+[ext_resource type="Texture2D" uid="uid://dfhuux6h0ch43" path="res://assets/clock.png" id="1_venu5"]
+
+[node name="clock" type="AnimatableBody2D" unique_id=1209637425]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=651944844]
+position = Vector2(0, -10)
+texture = ExtResource("1_venu5")
+region_enabled = true
+region_rect = Rect2(4.452404, 79.0724, 23.547596, 20.927597)

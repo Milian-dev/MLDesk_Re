@@ -1,0 +1,399 @@
+[gd_scene format=3 uid="uid://k352vr0oxw72"]
+
+[ext_resource type="Script" uid="uid://qdhj4uhwnliu" path="res://scripts/Object_menu.gd" id="1_l1do4"]
+[ext_resource type="Theme" uid="uid://dkt1t08oavra3" path="res://ui/GUI.tres" id="2_l1do4"]
+
+[node name="Control" type="Control" unique_id=2118682025]
+layout_mode = 3
+anchor_right = 0.84000003
+anchor_bottom = 1.0
+offset_right = 16.0
+
+[node name="Window" type="Sprite2D" parent="." unique_id=718956565]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(42, 50)
+region_enabled = true
+region_rect = Rect2(0, 0, 84, 100)
+script = ExtResource("1_l1do4")
+
+[node name="Panel" type="Panel" parent="Window" unique_id=997708317]
+offset_left = -42.0
+offset_top = -50.0
+offset_right = 48.0
+offset_bottom = 88.0
+theme = ExtResource("2_l1do4")
+
+[node name="Button_drag" type="Button" parent="Window" unique_id=1320341258]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 4
+visibility_layer = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -50.0
+offset_right = -35.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(11.196523, 17.248741)
+
+[node name="Button_pet" type="Button" parent="Window" unique_id=1530434235]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.040000003
+anchor_right = 0.952
+anchor_bottom = 0.24000001
+offset_left = -37.048
+offset_top = -45.04
+offset_right = 42.048
+offset_bottom = -23.24
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window/Button_pet" unique_id=1184885028]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -24.5
+offset_right = 20.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+text = "PET"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button_feed" type="Button" parent="Window" unique_id=399569982]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.26000002
+anchor_right = 0.952
+anchor_bottom = 0.46
+offset_left = -37.048
+offset_top = -19.26
+offset_right = 42.048
+offset_bottom = 2.54
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window/Button_feed" unique_id=1627606736]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.16
+offset_top = -24.5
+offset_right = 25.16
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+text = "FEED"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button_timer" type="Button" parent="Window" unique_id=131277059]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.49
+anchor_right = 0.94200003
+anchor_bottom = 0.69000006
+offset_left = -37.048
+offset_top = 6.51
+offset_right = 42.058
+offset_bottom = 28.31
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window/Button_timer" unique_id=1691940325]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.625
+offset_top = -24.5
+offset_right = 29.625
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+text = "TIMER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button_note" type="Button" parent="Window" unique_id=1583080121]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.49
+anchor_right = 0.94200003
+anchor_bottom = 0.69000006
+offset_left = -37.048
+offset_top = 32.51
+offset_right = 42.058
+offset_bottom = 54.31
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window/Button_note" unique_id=474481820]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.684998
+offset_top = -24.5
+offset_right = 25.684998
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+text = "NOTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button_setting" type="Button" parent="Window" unique_id=986842719]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.49
+anchor_right = 0.94200003
+anchor_bottom = 0.69000006
+offset_left = -37.048
+offset_top = 58.51
+offset_right = 42.058
+offset_bottom = 82.31
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window/Button_setting" unique_id=911320493]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.7175
+offset_top = -24.5
+offset_right = 36.7175
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+text = "SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Window_time_setup" type="Sprite2D" parent="." unique_id=2026968565]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 84, 100)
+
+[node name="Panel" type="Panel" parent="Window_time_setup" unique_id=264374695]
+offset_right = 154.0
+offset_bottom = 64.0
+theme = ExtResource("2_l1do4")
+
+[node name="Button_drag" type="Button" parent="Window_time_setup" unique_id=769068014]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 4
+visibility_layer = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(19.266737, 7.9818687)
+
+[node name="Button_timer_ok" type="Button" parent="Window_time_setup" unique_id=54671333]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.040000003
+anchor_right = 0.952
+anchor_bottom = 0.24000001
+offset_left = 4.952
+offset_top = 35.96
+offset_right = 74.048
+offset_bottom = 57.76
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window_time_setup/Button_timer_ok" unique_id=1649766683]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -24.5
+offset_right = 20.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+text = "OK"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button_timer_cancel" type="Button" parent="Window_time_setup" unique_id=1178388511]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.26000002
+anchor_right = 0.952
+anchor_bottom = 0.46
+offset_left = 78.952
+offset_top = 35.74
+offset_right = 148.048
+offset_bottom = 57.54
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window_time_setup/Button_timer_cancel" unique_id=514194729]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -24.5
+offset_right = 32.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+text = "CANCEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LineEdit_timer_input" type="LineEdit" parent="Window_time_setup" unique_id=1572621996]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 149.0
+offset_bottom = 27.0
+theme = ExtResource("2_l1do4")
+text = "25"
+alignment = 1
+max_length = 10
+
+[node name="Window_setting" type="Sprite2D" parent="." unique_id=476588997]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(42, 50)
+region_enabled = true
+region_rect = Rect2(0, 0, 84, 100)
+
+[node name="Panel" type="Panel" parent="Window_setting" unique_id=988345077]
+offset_left = -42.0
+offset_top = -50.0
+offset_right = 72.295
+offset_bottom = 38.0
+theme = ExtResource("2_l1do4")
+
+[node name="Button_drag" type="Button" parent="Window_setting" unique_id=472589156]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 4
+visibility_layer = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -50.0
+offset_right = -35.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(11.778478, 11.023688)
+
+[node name="Label" type="Label" parent="Window_setting" unique_id=157871963]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -43.5
+offset_right = 49.239998
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+theme_override_colors/font_color = Color(0.7254902, 0.5294118, 0.3372549, 1)
+text = "PET  SIZE"
+autowrap_mode = 3
+
+[node name="HSlider_pet_size" type="HSlider" parent="Window_setting" unique_id=1926365951]
+offset_left = -34.0
+offset_top = -23.0
+offset_right = 64.745
+offset_bottom = -7.0
+theme = ExtResource("2_l1do4")
+min_value = 1.0
+max_value = 4.0
+value = 1.0
+
+[node name="Button_startup" type="Button" parent="Window_setting" unique_id=1700701408]
+anchors_preset = -1
+anchor_left = 0.048
+anchor_top = 0.49
+anchor_right = 0.94200003
+anchor_bottom = 0.69000006
+offset_left = -35.048
+offset_top = 7.51
+offset_right = 44.187996
+offset_bottom = 29.31
+grow_vertical = 2
+theme = ExtResource("2_l1do4")
+
+[node name="Label" type="Label" parent="Window_setting/Button_startup" unique_id=213454220]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.8725
+offset_top = -24.5
+offset_right = 38.8725
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0036808, 1.0081179)
+theme = ExtResource("2_l1do4")
+text = "STARTUP"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CheckBox_startup" type="CheckBox" parent="Window_setting" unique_id=878788000]
+offset_left = 49.0
+offset_top = 7.0
+offset_right = 73.0
+offset_bottom = 31.0
+theme = ExtResource("2_l1do4")
+
+[connection signal="button_down" from="Window/Button_drag" to="Window" method="_on_button_drag_button_down"]
+[connection signal="button_up" from="Window/Button_drag" to="Window" method="_on_button_drag_button_up"]
+[connection signal="button_down" from="Window_time_setup/Button_drag" to="Window_time_setup" method="_on_button_drag_button_down"]
+[connection signal="button_up" from="Window_time_setup/Button_drag" to="Window_time_setup" method="_on_button_drag_button_up"]
+[connection signal="button_down" from="Window_setting/Button_drag" to="Window_setting" method="_on_button_drag_button_down"]
+[connection signal="button_up" from="Window_setting/Button_drag" to="Window_setting" method="_on_button_drag_button_up"]

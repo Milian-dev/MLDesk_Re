@@ -1,0 +1,126 @@
+{
+    "idle_default": {
+        "frames": "assets/idle/pixil-frame-{}.png",
+        "count": 6,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0], [0, 0], [0, 0], [0, 3], [0, 3], [0, 0]]
+    },
+    "idle_bass": {
+        "frames": "assets/idle_bass/pixil-frame-{}.png",
+        "count": 15,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 6]] 
+    },
+    "idle_read": {
+        "frames": "assets/idle_read/pixil-frame-{}.png",
+        "count": 24,
+        "eye_offsets": [[-3, 0], [-3, 0], [-3, 0], [-3, 0], [0, 0], [0, 0], [0, 0], [0, 0], [3, 0], [3, 0], [3, 0], [3, 0], [-3, 0], [-3, 0], [-3, 0], [-3, 0], [0, 0], [0, 0], [0, 0], [0, 0], [3, 0], [3, 0], [3, 0], [3, 0]],
+        "face_offsets": [[0, 0]] 
+    },
+    "idle_sleep": {
+        "frames": "assets/idle_sleep/pixil-frame-{}.png",
+        "count": 19,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6]] 
+    },
+    "idle_swing": {
+        "frames": "assets/idle_swing/pixil-frame-{}.png",
+        "count": 12,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0]] 
+    },
+    "idle_cat": {
+        "frames": "assets/idle_cat/pixil-frame-{}.png",
+        "count": 19,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[3, 57]] 
+    },
+    "idle_watermelon": {
+        "frames": "assets/idle_watermelon/pixil-frame-{}.png",
+        "count": 28,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[15, -36], [15, -36], [15, -36], [15, -33], [15, -33], [15, -36], [15, -36], [15, -33], [15, -33], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36], [15, -36]] 
+    },
+    "idle_work": {
+        "frames": "assets/idle_work/pixil-frame-{}.png",
+        "count": 22,
+        "eye_offsets": [[12, 0]],
+        "face_offsets": [[12, 0]]
+    },
+    "sleep": {
+        "frames": "assets/sleep/pixil-frame-{}.png",
+        "count": 19,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6], [0, 6]] 
+    },
+    "hover": {
+        "frames": "assets/hover/frame_{:04d}.png",
+        "count": 1,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0]]
+    },
+    "click": {
+        "frames": "assets/click/click_{}.png",
+        "count": 1,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, -18]]
+    },
+    "tilt_left": {
+        "frames": "assets/click/tilt_left_{}.png",
+        "count": 1,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, -18]]
+    },
+    "tilt_right": {
+        "frames": "assets/click/tilt_right_{}.png",
+        "count": 1,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, -18]]
+    },
+    "pet": {
+        "frames": "assets/pet/pixil-frame-{}.png",
+        "count": 30,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0]]
+    },
+    "feed_ignore": {
+        "frames": "assets/feed_ignore/pixil-frame-{}.png",
+        "count": 16,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0]]
+    },
+    "feed_success": {
+        "frames": "assets/feed_success/pixil-frame-{}.png",
+        "count": 39,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0]]
+    },
+    "dinner": {
+        "frames": "assets/dinner/pixil-frame-{}.png",
+        "count": 27,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 3], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]]
+    },
+    "birthday": {
+        "frames": "assets/birthday/pixil-frame-{}.png",
+        "count": 107,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0]]
+    },
+    "clock": {
+        "frames": "assets/clock/pixil-frame-{}.png",
+        "count": 6,
+        "eye_offsets": [[0, 0]],
+        "face_offsets": [[0, 0]]
+    },
+    "_facial_expressions": {
+        "neutral": "assets/face/neutral.png",
+        "angry": "assets/face/angry.png",
+        "annoyed": "assets/face/annoyed.png",
+        "blink": "assets/face/blink.png",
+        "cute": "assets/face/cute.png",
+        "happy": "assets/face/happy.png",
+        "sad": "assets/face/sad.png"
+    }
+}
+

@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://ywnyjvin7knc"]
+
+[ext_resource type="Script" uid="uid://dtcnyomhmn4gx" path="res://scripts/Scene.gd" id="1_66br4"]
+[ext_resource type="PackedScene" uid="uid://b01lo5bmkoabc" path="res://map/Milian.tscn" id="2_eort7"]
+[ext_resource type="Theme" uid="uid://dkt1t08oavra3" path="res://ui/GUI.tres" id="5_eort7"]
+[ext_resource type="Texture2D" uid="uid://dfhuux6h0ch43" path="res://assets/clock.png" id="6_dob7g"]
+[ext_resource type="PackedScene" uid="uid://k352vr0oxw72" path="res://map/GUI.tscn" id="6_eort7"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nxogm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66br4"]
+atlas = ExtResource("6_dob7g")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eort7"]
+atlas = ExtResource("6_dob7g")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dob7g"]
+atlas = ExtResource("6_dob7g")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6i3i"]
+atlas = ExtResource("6_dob7g")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjlwc"]
+atlas = ExtResource("6_dob7g")
+region = Rect2(50, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcudr"]
+atlas = ExtResource("6_dob7g")
+region = Rect2(100, 50, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2lf55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66br4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eort7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dob7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6i3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjlwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcudr")
+}],
+"loop": true,
+"name": &"timeup",
+"speed": 10.0
+}]
+
+[node name="Scene" type="Node2D" unique_id=842160943]
+script = ExtResource("1_66br4")
+
+[node name="Milian" parent="." unique_id=1582413066 instance=ExtResource("2_eort7")]
+position = Vector2(1, 0)
+
+[node name="Camera_main" type="Camera2D" parent="." unique_id=154409133]
+
+[node name="ground" type="StaticBody2D" parent="." unique_id=1166003690]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground" unique_id=1018117264]
+visible = false
+shape = SubResource("WorldBoundaryShape2D_nxogm")
+
+[node name="Timer_idle_variant" type="Timer" parent="." unique_id=234327515]
+
+[node name="Window_setting" type="Window" parent="." unique_id=1454222465]
+transparent_bg = true
+oversampling_override = 1.0
+visible = false
+borderless = true
+always_on_top = true
+transparent = true
+
+[node name="Control" parent="Window_setting" unique_id=2118682025 instance=ExtResource("6_eort7")]
+
+[node name="Window_timer" type="Window" parent="." unique_id=2068094600]
+transparent_bg = true
+oversampling_override = 1.0
+size = Vector2i(300, 100)
+visible = false
+borderless = true
+always_on_top = true
+transparent = true
+
+[node name="Clock" type="AnimatedSprite2D" parent="Window_timer" unique_id=141772305]
+position = Vector2(151, 51)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_2lf55")
+animation = &"timeup"
+
+[node name="Button_clock" type="Button" parent="Window_timer" unique_id=1800285286]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 300.0
+offset_bottom = 100.0
+
+[node name="Window_timer" type="Sprite2D" parent="Window_timer" unique_id=1011354560]
+self_modulate = Color(1, 1, 1, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 84, 100)
+
+[node name="Panel" type="Panel" parent="Window_timer/Window_timer" unique_id=1102855167]
+offset_right = 300.0
+offset_bottom = 80.0
+scale = Vector2(1, 0.9840256)
+theme = ExtResource("5_eort7")
+
+[node name="TimerLabel" type="Label" parent="Window_timer/Window_timer/Panel" unique_id=669740228]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -23.740261
+offset_right = 61.0
+offset_bottom = 25.259735
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_eort7")
+theme_override_colors/font_color = Color(0.77, 0.46585, 0.16169998, 1)
+theme_override_font_sizes/font_size = 48
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Window_note" type="Window" parent="." unique_id=931883764]
+transparent_bg = true
+oversampling_override = 1.0
+size = Vector2i(300, 200)
+visible = false
+borderless = true
+always_on_top = true
+transparent = true
+
+[node name="Window_note" type="Sprite2D" parent="Window_note" unique_id=431993006]
+self_modulate = Color(1, 1, 1, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 300, 100)
+
+[node name="TextEdit" type="TextEdit" parent="Window_note/Window_note" unique_id=1427182227]
+offset_right = 300.0
+offset_bottom = 200.0
+theme = ExtResource("5_eort7")
+
+[node name="Window_tip" type="Window" parent="." unique_id=183001047]
+transparent_bg = true
+oversampling_override = 1.0
+size = Vector2i(300, 80)
+borderless = true
+always_on_top = true
+transparent = true
+
+[node name="Window_tip" type="Sprite2D" parent="Window_tip" unique_id=1024656710]
+self_modulate = Color(1, 1, 1, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 300, 100)
+
+[node name="TextEdit" type="TextEdit" parent="Window_tip/Window_tip" unique_id=164623554]
+offset_right = 300.0
+offset_bottom = 80.0
+theme = ExtResource("5_eort7")
+theme_override_colors/font_color = Color(0.7254902, 0.5294118, 0.3372549, 1)
+theme_override_colors/font_readonly_color = Color(0.63529414, 0.42745098, 0.21960784, 1)
+theme_override_colors/font_placeholder_color = Color(0.63529414, 0.42745098, 0.21960784, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "Tips"
+wrap_mode = 1
+scroll_fit_content_height = true
+
+[connection signal="timeout" from="Timer_idle_variant" to="." method="_on_timer_idle_variant_timeout"]
