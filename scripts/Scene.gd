@@ -28,9 +28,6 @@ const NOTE_SAVE_DELAY := 0.5
 const STARTUP_ENTRY_NAME := "MLDeskPetStartup.cmd"
 const TRAY_MENU_ID_TOGGLE_VISIBILITY := 1
 const TRAY_MENU_ID_QUIT := 2
-const ALPHA_MASK_THRESHOLD := 0.1
-const MIN_ALPHA_POLYGON_POINTS := 3
-const DEBUG_ALPHA_MOUSE_MASK := true
 
 
 var pet_scale := 2.0
@@ -71,15 +68,12 @@ var last_feed_time := 0.0
 var current_dinner_window := -1
 var current_dinner_key := ""
 var rewarded_dinner_key := ""
-var current_pet_mouse_polygon := PackedVector2Array()
-var alpha_polygon_cache := {}
 
 @onready var anim_player: AnimationPlayer = $Milian/AnimationPlayer
 @onready var idle_variant_timer: Timer = $Timer_idle_variant
 @onready var area_hit: Area2D = $Milian/area_hit
 @onready var collision_shape: CollisionShape2D = $Milian/area_hit/collision_hit
-@onready var body_node: AnimatedSprite2D = $Milian/body
-@onready var pet_node: Node2D = $Milian
+@onready var body_node = $Milian/body
 @onready var hand_sprite: AnimatedSprite2D = $Milian/body/hand_marker/hand
 @onready var status_mood: AnimatedSprite2D = $Milian/body/status_mood
 @onready var status_health: AnimatedSprite2D = $Milian/body/status_health
@@ -112,7 +106,6 @@ var alpha_polygon_cache := {}
 
 
 func _ready() -> void:
-	_debug_alpha_mask("ready begin")
 	_setup_window()
 	_setup_setting_window()
 	_setup_notebook()
@@ -125,7 +118,6 @@ func _ready() -> void:
 
 	await get_tree().process_frame
 	_update_mouse_mask()
-	_debug_alpha_mask("ready mask initialized")
 
 	var now = Time.get_unix_time_from_system()
 	last_mouse_move_time = now
@@ -151,10 +143,6 @@ func _setup_window() -> void:
 	var usable_rect = DisplayServer.screen_get_usable_rect()
 	var target_y = usable_rect.end.y - window.size.y
 	window.position = Vector2i(usable_rect.end.x / 2, target_y)
-	_debug_alpha_mask(
-		"window setup transparent=%s size=%s position=%s"
-		% [str(window.transparent), str(window.size), str(window.position)]
-	)
 
 
 func _setup_setting_window() -> void:
@@ -370,10 +358,6 @@ func _connect_signals() -> void:
 		button_clock.pressed.connect(_on_button_clock_pressed)
 	if not get_window().close_requested.is_connected(_on_main_window_close_requested):
 		get_window().close_requested.connect(_on_main_window_close_requested)
-	if not body_node.frame_changed.is_connected(_update_mouse_mask):
-		body_node.frame_changed.connect(_update_mouse_mask)
-	if not body_node.animation_changed.is_connected(_update_mouse_mask):
-		body_node.animation_changed.connect(_update_mouse_mask)
 
 
 func ANIMATION():
@@ -540,13 +524,20 @@ func _update_drag_tilt() -> void:
 			_play_interaction_variant_anim("tilt_right_slow")
 			
 func _is_mouse_on_pet() -> bool:
-	if current_pet_mouse_polygon.size() < MIN_ALPHA_POLYGON_POINTS:
-		return false
+	var shape = collision_shape.shape
+	if shape is RectangleShape2D:
+		var mouse_pos = get_viewport().get_mouse_position()
+		var local_mouse = collision_shape.global_transform.affine_inverse() * mouse_pos
+		var half_size = shape.size * 0.5
 
-	return Geometry2D.is_point_in_polygon(
-		get_viewport().get_mouse_position(),
-		current_pet_mouse_polygon
-	)
+		return (
+			local_mouse.x >= -half_size.x
+			and local_mouse.x <= half_size.x
+			and local_mouse.y >= -half_size.y
+			and local_mouse.y <= half_size.y
+		)
+
+	return false
 
 
 func _is_mouse_on_popup_window(popup_window: Window) -> bool:
@@ -559,262 +550,23 @@ func _is_mouse_on_popup_window(popup_window: Window) -> bool:
 
 
 func _update_mouse_mask() -> void:
-	current_pet_mouse_polygon = _get_current_alpha_mouse_polygon()
-	var polygon_bounds := _get_polygon_bounds(current_pet_mouse_polygon)
-	var window_rect := Rect2(Vector2.ZERO, Vector2(get_window().size))
-	if current_pet_mouse_polygon.size() < MIN_ALPHA_POLYGON_POINTS or not polygon_bounds.intersects(window_rect):
-		_debug_alpha_mask(
-			"computed polygon is not drawable in window; fallback. bounds=%s window_rect=%s"
-			% [str(polygon_bounds), str(window_rect)]
-		)
-		current_pet_mouse_polygon = _get_collision_mouse_polygon()
-		polygon_bounds = _get_polygon_bounds(current_pet_mouse_polygon)
-
-	_debug_alpha_mask(
-		"apply passthrough window_size=%s polygon=%s bounds=%s"
-		% [str(get_window().size), str(current_pet_mouse_polygon.size()), str(polygon_bounds)]
-	)
-	DisplayServer.window_set_mouse_passthrough(current_pet_mouse_polygon)
-
-
-func _get_current_alpha_mouse_polygon() -> PackedVector2Array:
-	var texture := body_node.sprite_frames.get_frame_texture(body_node.animation, body_node.frame)
-	if texture == null:
-		_debug_alpha_mask("texture is null; using collision fallback")
-		return _get_collision_mouse_polygon()
-
-	var cache_key := "%s:%s:%s" % [body_node.animation, str(body_node.frame), str(texture.get_rid())]
-	var frame_polygon: PackedVector2Array
-	if alpha_polygon_cache.has(cache_key):
-		frame_polygon = alpha_polygon_cache[cache_key]
-		_debug_alpha_mask("cache hit %s frame_points=%s" % [cache_key, str(frame_polygon.size())])
-	else:
-		frame_polygon = _build_alpha_polygon_for_texture(texture)
-		alpha_polygon_cache[cache_key] = frame_polygon
-		_debug_alpha_mask("cache miss %s frame_points=%s" % [cache_key, str(frame_polygon.size())])
-
-	if frame_polygon.size() < MIN_ALPHA_POLYGON_POINTS:
-		_debug_alpha_mask("frame polygon too small; using collision fallback")
-		return _get_collision_mouse_polygon()
-
-	var transformed := PackedVector2Array()
-	for point in frame_polygon:
-		transformed.append(pet_node.global_transform * point)
-
-	_debug_alpha_mask(
-		"transformed anim=%s frame=%s pet_scale=%s pet_pos=%s body_centered=%s body_pos=%s bounds=%s"
-		% [
-			str(body_node.animation),
-			str(body_node.frame),
-			str(pet_node.global_scale),
-			str(pet_node.global_position),
-			str(body_node.centered),
-			str(body_node.position),
-			str(_get_polygon_bounds(transformed)),
-		]
-	)
-
-	return transformed
-
-
-func _get_collision_mouse_polygon() -> PackedVector2Array:
 	var shape = collision_shape.shape
-	if not (shape is RectangleShape2D):
-		_debug_alpha_mask("collision fallback has no rectangle shape")
-		return PackedVector2Array()
+	var polygons: Array[PackedVector2Array] = []
 
-	var half_size = shape.size * 0.5
-	var xf = collision_shape.global_transform
-	var polygon := PackedVector2Array([
-		xf * Vector2(-half_size.x, -half_size.y),
-		xf * Vector2(half_size.x, -half_size.y),
-		xf * Vector2(half_size.x, half_size.y),
-		xf * Vector2(-half_size.x, half_size.y),
-	])
-	_debug_alpha_mask("collision fallback bounds=%s" % str(_get_polygon_bounds(polygon)))
-	return polygon
+	if shape is RectangleShape2D:
+		var half_size = shape.size * 0.5
+		var xf = collision_shape.global_transform
 
+		var poly := PackedVector2Array([
+			xf * Vector2(-half_size.x, -half_size.y),
+			xf * Vector2(half_size.x, -half_size.y),
+			xf * Vector2(half_size.x, half_size.y),
+			xf * Vector2(-half_size.x, half_size.y),
+		])
 
-func _build_alpha_polygon_for_texture(texture: Texture2D) -> PackedVector2Array:
-	var image := _get_texture_image(texture)
-	if image == null or image.is_empty():
-		_debug_alpha_mask("texture image is null/empty")
-		return PackedVector2Array()
+		polygons.append(poly)
 
-	var solid_pixels := _count_solid_alpha_pixels(image)
-	var contour := _trace_alpha_contour(image)
-	_debug_alpha_mask(
-		"texture=%sx%s image=%sx%s solid_pixels=%s contour_points=%s"
-		% [
-			str(texture.get_width()),
-			str(texture.get_height()),
-			str(image.get_width()),
-			str(image.get_height()),
-			str(solid_pixels),
-			str(contour.size()),
-		]
-	)
-	return contour
-
-
-func _get_texture_image(texture: Texture2D) -> Image:
-	if texture is AtlasTexture:
-		var atlas_texture := texture as AtlasTexture
-		if atlas_texture.atlas == null:
-			_debug_alpha_mask("atlas texture has no atlas")
-			return null
-
-		var atlas_image := atlas_texture.atlas.get_image()
-		if atlas_image == null or atlas_image.is_empty():
-			_debug_alpha_mask("atlas image is null/empty")
-			return null
-
-		var region := Rect2i(atlas_texture.region)
-		_debug_alpha_mask("atlas region=%s atlas_size=%sx%s" % [str(region), str(atlas_image.get_width()), str(atlas_image.get_height())])
-		var image := Image.create_empty(region.size.x, region.size.y, false, atlas_image.get_format())
-		image.blit_rect(atlas_image, region, Vector2i.ZERO)
-		return image
-
-	return texture.get_image()
-
-
-func _trace_alpha_contour(image: Image) -> PackedVector2Array:
-	var width := image.get_width()
-	var height := image.get_height()
-	var edges := {}
-
-	for y in range(height):
-		for x in range(width):
-			if not _is_alpha_solid(image, x, y):
-				continue
-
-			if not _is_alpha_solid(image, x, y - 1):
-				_add_boundary_edge(edges, Vector2i(x, y), Vector2i(x + 1, y))
-			if not _is_alpha_solid(image, x + 1, y):
-				_add_boundary_edge(edges, Vector2i(x + 1, y), Vector2i(x + 1, y + 1))
-			if not _is_alpha_solid(image, x, y + 1):
-				_add_boundary_edge(edges, Vector2i(x + 1, y + 1), Vector2i(x, y + 1))
-			if not _is_alpha_solid(image, x - 1, y):
-				_add_boundary_edge(edges, Vector2i(x, y + 1), Vector2i(x, y))
-
-	var contour := _extract_longest_boundary_loop(edges)
-	_debug_alpha_mask("boundary_edges=%s longest_loop=%s" % [str(edges.size()), str(contour.size())])
-	return _simplify_orthogonal_polygon(contour)
-
-
-func _is_alpha_solid(image: Image, x: int, y: int) -> bool:
-	if x < 0 or y < 0 or x >= image.get_width() or y >= image.get_height():
-		return false
-
-	return image.get_pixel(x, y).a > ALPHA_MASK_THRESHOLD
-
-
-func _count_solid_alpha_pixels(image: Image) -> int:
-	var count := 0
-	for y in range(image.get_height()):
-		for x in range(image.get_width()):
-			if _is_alpha_solid(image, x, y):
-				count += 1
-	return count
-
-
-func _add_boundary_edge(edges: Dictionary, from_point: Vector2i, to_point: Vector2i) -> void:
-	var key := _point_key(from_point)
-	if not edges.has(key):
-		edges[key] = []
-	edges[key].append(to_point)
-
-
-func _extract_longest_boundary_loop(edges: Dictionary) -> PackedVector2Array:
-	var longest := PackedVector2Array()
-
-	for start_key in edges.keys():
-		var candidates: Array = edges[start_key]
-		for first_candidate in candidates:
-			var start := _point_from_key(start_key)
-			var previous := start
-			var current: Vector2i = first_candidate
-			var contour := PackedVector2Array([Vector2(start)])
-			var guard := edges.size() + 2
-
-			while guard > 0:
-				guard -= 1
-				contour.append(Vector2(current))
-				if current == start:
-					break
-
-				var current_key := _point_key(current)
-				if not edges.has(current_key):
-					break
-
-				var next := _pick_next_boundary_point(edges[current_key], previous)
-				if next == current:
-					break
-
-				previous = current
-				current = next
-
-			if contour.size() > longest.size() and contour[contour.size() - 1] == contour[0]:
-				contour.remove_at(contour.size() - 1)
-				longest = contour
-
-	return longest
-
-
-func _pick_next_boundary_point(candidates: Array, previous: Vector2i) -> Vector2i:
-	for candidate in candidates:
-		if candidate != previous:
-			return candidate
-	return previous
-
-
-func _simplify_orthogonal_polygon(points: PackedVector2Array) -> PackedVector2Array:
-	if points.size() < MIN_ALPHA_POLYGON_POINTS:
-		return points
-
-	var simplified := PackedVector2Array()
-	for i in range(points.size()):
-		var previous := points[(i - 1 + points.size()) % points.size()]
-		var current := points[i]
-		var next := points[(i + 1) % points.size()]
-		var previous_delta := current - previous
-		var next_delta := next - current
-
-		if previous_delta.cross(next_delta) != 0.0:
-			simplified.append(current)
-
-	return simplified
-
-
-func _point_key(point: Vector2i) -> String:
-	return "%s,%s" % [point.x, point.y]
-
-
-func _point_from_key(key: String) -> Vector2i:
-	var parts := key.split(",")
-	return Vector2i(int(parts[0]), int(parts[1]))
-
-
-func _get_polygon_bounds(points: PackedVector2Array) -> Rect2:
-	if points.is_empty():
-		return Rect2()
-
-	var min_point := points[0]
-	var max_point := points[0]
-	for point in points:
-		min_point.x = minf(min_point.x, point.x)
-		min_point.y = minf(min_point.y, point.y)
-		max_point.x = maxf(max_point.x, point.x)
-		max_point.y = maxf(max_point.y, point.y)
-
-	return Rect2(min_point, max_point - min_point)
-
-
-func _debug_alpha_mask(message: String) -> void:
-	if not DEBUG_ALPHA_MOUSE_MASK:
-		return
-
-	print("[alpha-mask] " + message)
+	DisplayServer.window_set_mouse_passthrough(polygons)
 
 
 func _show_setting_window_at_mouse() -> void:
