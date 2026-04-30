@@ -18,7 +18,7 @@ const STAT_MIN := 0
 const STAT_MAX := 3
 const STAT_DECAY_INTERVAL := 1800.0
 const NOTE_WINDOW_GAP := 0
-const BASE_TIMER_WINDOW_SIZE := Vector2i(300, 100)
+const BASE_TIMER_WINDOW_SIZE := Vector2i(300, 80)
 const BASE_NOTE_WINDOW_SIZE := Vector2i(300, 200)
 const NOTEBOOK_DIR := "user://data"
 const NOTEBOOK_PATH := "user://data/notebook.txt"
@@ -28,10 +28,12 @@ const NOTE_SAVE_DELAY := 0.5
 const STARTUP_ENTRY_NAME := "MLDeskPetStartup.cmd"
 const TRAY_MENU_ID_TOGGLE_VISIBILITY := 1
 const TRAY_MENU_ID_QUIT := 2
+const SETTING_WINDOW_LEAVE_GRACE_SECONDS := 0.5
 
 
 var pet_scale := 2.0
 var window_scale := 1.0
+var clock_size := 1.5
 var startup_enabled := false
 var has_saved_pet_position := false
 var saved_pet_position := Vector2i.ZERO
@@ -68,6 +70,7 @@ var last_feed_time := 0.0
 var current_dinner_window := -1
 var current_dinner_key := ""
 var rewarded_dinner_key := ""
+var setting_window_open_time := 0.0
 
 @onready var anim_player: AnimationPlayer = $Milian/AnimationPlayer
 @onready var idle_variant_timer: Timer = $Timer_idle_variant
@@ -185,6 +188,7 @@ func _setup_setting_window() -> void:
 	timer_setup_panel.hide()
 	settings_panel.hide()
 	menu_panel.show()
+	_update_setting_window_clip()
 	_update_menu_buttons()
 
 
@@ -323,7 +327,7 @@ func _apply_window_scale() -> void:
 	timer_panel.scale = scale_vec
 	note_panel.scale = scale_vec
 	tip_panel.scale = scale_vec
-	clock_sprite.scale = scale_vec
+	clock_sprite.scale = scale_vec * clock_size
 
 	setting_window.size = Vector2i(Vector2(setting_ui.size) * window_scale)
 	timer_window.size = Vector2i(Vector2(BASE_TIMER_WINDOW_SIZE) * window_scale)
@@ -403,10 +407,12 @@ func UPDATE():
 
 
 func _process(_delta: float) -> void:
+	_update_hover_state()
 	_update_sleep_state()
 	_update_dinner_state()
 	_update_stats_decay()
 	_update_timer_countdown()
+	_close_setting_window_if_mouse_left()
 	_refresh_interactible()
 
 
@@ -427,7 +433,7 @@ func _input(event) -> void:
 			event.button_index == MOUSE_BUTTON_LEFT
 			or event.button_index == MOUSE_BUTTON_RIGHT
 		):
-			setting_window.hide()
+			_hide_setting_window()
 			return
 
 	if event is InputEventMouseMotion:
@@ -526,7 +532,7 @@ func _update_drag_tilt() -> void:
 func _is_mouse_on_pet() -> bool:
 	var shape = collision_shape.shape
 	if shape is RectangleShape2D:
-		var mouse_pos = get_viewport().get_mouse_position()
+		var mouse_pos = Vector2(DisplayServer.mouse_get_position()) - Vector2(DisplayServer.window_get_position())
 		var local_mouse = collision_shape.global_transform.affine_inverse() * mouse_pos
 		var half_size = shape.size * 0.5
 
@@ -549,6 +555,33 @@ func _is_mouse_on_popup_window(popup_window: Window) -> bool:
 	return popup_rect.has_point(mouse_screen)
 
 
+func _is_mouse_on_setting_window() -> bool:
+	if setting_window == null or not setting_window.visible:
+		return false
+
+	var active_panel := _get_active_setting_panel()
+	if active_panel == null:
+		return false
+
+	var mouse_screen = Vector2(DisplayServer.mouse_get_position())
+	var clip_rect := _get_setting_panel_clip_rect(active_panel)
+	var popup_rect = Rect2(Vector2(setting_window.position) + clip_rect.position, clip_rect.size)
+	return popup_rect.has_point(mouse_screen)
+
+
+func _close_setting_window_if_mouse_left() -> void:
+	if not setting_window.visible:
+		return
+
+	if Time.get_unix_time_from_system() - setting_window_open_time < SETTING_WINDOW_LEAVE_GRACE_SECONDS:
+		return
+
+	if _is_mouse_on_setting_window():
+		return
+
+	_hide_setting_window()
+
+
 func _update_mouse_mask() -> void:
 	var shape = collision_shape.shape
 	var polygons: Array[PackedVector2Array] = []
@@ -569,27 +602,127 @@ func _update_mouse_mask() -> void:
 	DisplayServer.window_set_mouse_passthrough(polygons)
 
 
+func _get_active_setting_panel() -> Node2D:
+	if settings_panel.visible:
+		return settings_panel
+	if timer_setup_panel.visible:
+		return timer_setup_panel
+	if menu_panel.visible:
+		return menu_panel
+	return null
+
+
+func _get_setting_panel_clip_rect(panel: Node2D) -> Rect2:
+	var frame := panel.get_node_or_null("Panel") as Control
+	if frame == null:
+		return Rect2(Vector2.ZERO, Vector2(setting_window.size))
+
+	return Rect2(
+		(panel.position + frame.position) * window_scale,
+		frame.size * window_scale
+	)
+
+
+func _update_setting_window_clip(keep_mouse_inside := false) -> void:
+	if setting_window == null:
+		return
+
+	if not setting_window.visible:
+		return
+
+	var active_panel := _get_active_setting_panel()
+	if active_panel == null:
+		_clear_setting_window_mouse_passthrough()
+		return
+
+	var clip_rect := _get_setting_panel_clip_rect(active_panel)
+	var clip_end := clip_rect.end.ceil()
+	setting_window.size = Vector2i(
+		max(1, int(clip_end.x)),
+		max(1, int(clip_end.y))
+	)
+	if keep_mouse_inside:
+		_nudge_setting_window_to_mouse()
+
+	var polygons: Array[PackedVector2Array] = [
+		PackedVector2Array([
+			clip_rect.position,
+			Vector2(clip_rect.end.x, clip_rect.position.y),
+			clip_rect.end,
+			Vector2(clip_rect.position.x, clip_rect.end.y),
+		])
+	]
+	DisplayServer.window_set_mouse_passthrough(polygons, setting_window.get_window_id())
+
+
+func _nudge_setting_window_to_mouse() -> void:
+	var mouse_screen = Vector2(DisplayServer.mouse_get_position())
+	var position := Vector2(setting_window.position)
+	var size := Vector2(setting_window.size)
+	var next_position := position
+
+	if mouse_screen.x < position.x:
+		next_position.x = mouse_screen.x
+	elif mouse_screen.x >= position.x + size.x:
+		next_position.x = mouse_screen.x - size.x + 1.0
+
+	if mouse_screen.y < position.y:
+		next_position.y = mouse_screen.y
+	elif mouse_screen.y >= position.y + size.y:
+		next_position.y = mouse_screen.y - size.y + 1.0
+
+	var usable_rect = DisplayServer.screen_get_usable_rect()
+	next_position.x = clampf(
+		next_position.x,
+		float(usable_rect.position.x),
+		float(max(usable_rect.position.x, usable_rect.end.x - setting_window.size.x))
+	)
+	next_position.y = clampf(
+		next_position.y,
+		float(usable_rect.position.y),
+		float(max(usable_rect.position.y, usable_rect.end.y - setting_window.size.y))
+	)
+
+	setting_window.position = Vector2i(next_position.round())
+
+
+func _clear_setting_window_mouse_passthrough() -> void:
+	var polygons: Array[PackedVector2Array] = []
+	DisplayServer.window_set_mouse_passthrough(polygons, setting_window.get_window_id())
+
+
+func _hide_setting_window() -> void:
+	if setting_window.visible:
+		_clear_setting_window_mouse_passthrough()
+	setting_window.hide()
+
+
 func _show_setting_window_at_mouse() -> void:
-	var popup_size = setting_window.size
 	var usable_rect = DisplayServer.screen_get_usable_rect()
 	var mouse_screen = Vector2(DisplayServer.mouse_get_position())
+	menu_panel.show()
+	timer_setup_panel.hide()
+	settings_panel.hide()
+	setting_window_open_time = Time.get_unix_time_from_system()
+	setting_window.show()
+	_update_setting_window_clip()
+	var popup_size = setting_window.size
+	var max_x = max(usable_rect.position.x, usable_rect.end.x - popup_size.x)
+	var max_y = max(usable_rect.position.y, usable_rect.end.y - popup_size.y)
 
 	var clamped_x = clampi(
 		int(round(mouse_screen.x)),
 		usable_rect.position.x,
-		usable_rect.end.x
+		max_x
 	)
 	var clamped_y = clampi(
 		int(round(mouse_screen.y)),
 		usable_rect.position.y,
-		usable_rect.end.y
+		max_y
 	)
 
 	setting_window.position = Vector2i(clamped_x, clamped_y)
-	menu_panel.show()
-	timer_setup_panel.hide()
-	settings_panel.hide()
-	setting_window.show()
+	_update_setting_window_clip()
 
 
 func _refresh_interactible() -> void:
@@ -597,6 +730,7 @@ func _refresh_interactible() -> void:
 		and not is_idle_napping \
 		and not is_dragging \
 		and not is_hand_interaction_playing \
+		and not _is_feed_success_playing() \
 		and anim_player.current_animation != "click"
 
 	if next_interactible == is_interactible:
@@ -607,6 +741,11 @@ func _refresh_interactible() -> void:
 
 
 func _update_menu_buttons() -> void:
+	if not is_interactible:
+		button_pet.disabled = true
+		button_feed.disabled = true
+		return
+
 	if is_hand_interaction_playing:
 		button_pet.disabled = hand_sprite.animation == "feed_ignore"
 		button_feed.disabled = hand_sprite.animation == "pet"
@@ -621,7 +760,7 @@ func _on_button_pet_pressed() -> void:
 		return
 
 	menu_panel.hide()
-	setting_window.hide()
+	_hide_setting_window()
 	_play_hand_interaction("pet", button_feed)
 
 
@@ -630,7 +769,7 @@ func _on_button_feed_pressed() -> void:
 		return
 
 	menu_panel.hide()
-	setting_window.hide()
+	_hide_setting_window()
 
 	if is_idle_variant_playing or is_dinner_time:
 		_play_hand_interaction("feed_ignore", button_pet)
@@ -643,12 +782,16 @@ func _on_button_setting_pressed() -> void:
 	menu_panel.hide()
 	timer_setup_panel.hide()
 	settings_panel.show()
+	setting_window_open_time = Time.get_unix_time_from_system()
+	_update_setting_window_clip(true)
 
 
 func _on_button_timer_pressed() -> void:
 	menu_panel.hide()
 	settings_panel.hide()
 	timer_setup_panel.show()
+	setting_window_open_time = Time.get_unix_time_from_system()
+	_update_setting_window_clip(true)
 	_grab_focus_next_frame(timer_input, true)
 
 
@@ -657,7 +800,7 @@ func _on_button_note_pressed() -> void:
 		_hide_note_window()
 		return
 
-	setting_window.hide()
+	_hide_setting_window()
 	_position_note_window()
 	_load_note_text()
 	note_window.show()
@@ -784,7 +927,7 @@ func _on_main_window_close_requested() -> void:
 func _hide_to_tray() -> void:
 	_save_config()
 	get_window().hide()
-	setting_window.hide()
+	_hide_setting_window()
 	timer_window.hide()
 	note_window.hide()
 	_update_tray_menu_label()
@@ -887,7 +1030,7 @@ func _on_button_timer_ok_pressed() -> void:
 	menu_panel.hide()
 	settings_panel.hide()
 	timer_setup_panel.hide()
-	setting_window.hide()
+	_hide_setting_window()
 	timer_panel.show()
 	button_clock.disabled = true
 	clock_sprite.hide()
@@ -903,6 +1046,8 @@ func _on_button_timer_cancel_pressed() -> void:
 	timer_setup_panel.hide()
 	settings_panel.hide()
 	menu_panel.show()
+	setting_window_open_time = Time.get_unix_time_from_system()
+	_update_setting_window_clip(true)
 
 
 func _on_button_clock_pressed() -> void:
@@ -917,6 +1062,7 @@ func _play_hand_interaction(animation_name: String, blocked_button: Button) -> v
 		return
 
 	is_hand_interaction_playing = true
+	_refresh_interactible()
 	blocked_button.disabled = true
 	hand_sprite.animation = animation_name
 	hand_sprite.frame = 0
@@ -932,6 +1078,7 @@ func _play_feed_success() -> void:
 
 	low_health_acknowledged = true
 	anim_player.play("feed_success")
+	_refresh_interactible()
 	_finish_feed_success.call_deferred()
 
 
@@ -941,8 +1088,10 @@ func _finish_feed_success() -> void:
 	if _is_feed_success_playing():
 		return
 
+	_refresh_interactible()
+
 	if not is_sleeping:
-		_change_health(1)
+		_change_health(2)
 		last_feed_time = Time.get_unix_time_from_system()
 
 	if is_dragging:
@@ -972,7 +1121,7 @@ func _finish_hand_interaction(animation_name: String, blocked_button: Button) ->
 	is_hand_interaction_playing = false
 	blocked_button.disabled = false
 	if animation_name == "pet" and not is_sleeping:
-		_change_mood(1)
+		_change_mood(2)
 		low_mood_acknowledged = true
 		last_pet_time = Time.get_unix_time_from_system()
 	_refresh_interactible()
@@ -1194,7 +1343,7 @@ func _dismiss_clock_alarm() -> void:
 
 func _position_clock_over_pet() -> void:
 	_position_timer_window_over_pet()
-	clock_sprite.position = Vector2(timer_window.size.x * 0.5, 12.0 * window_scale +50)
+	clock_sprite.position = Vector2(timer_window.size.x * 0.5, timer_window.size.y * 0.5)
 
 
 func _is_mouse_on_clock() -> bool:
@@ -1205,9 +1354,9 @@ func _is_mouse_on_clock() -> bool:
 		clock_sprite.animation,
 		clock_sprite.frame
 	)
-	var clock_size = clock_texture.get_size() * clock_sprite.scale
+	var clock_frame_size = clock_texture.get_size() * clock_sprite.scale
 	var local_mouse = clock_sprite.to_local(get_global_mouse_position())
-	var half_size = clock_size * 0.5
+	var half_size = clock_frame_size * 0.5
 
 	return (
 		local_mouse.x >= -half_size.x

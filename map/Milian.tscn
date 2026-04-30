@@ -3407,6 +3407,5 @@ visible = false
 position = Vector2(50, 50)
 
 [node name="collision_hit" type="CollisionShape2D" parent="area_hit" unique_id=1767086419]
-visible = false
 position = Vector2(0.5, 13.84375)
 shape = SubResource("RectangleShape2D_blp8f")
