@@ -93,11 +93,13 @@ var setting_window_open_time := 0.0
 @onready var timer_window: Window = $Window_timer
 @onready var timer_panel: Sprite2D = $Window_timer/Window_timer
 @onready var timer_label: Label = $Window_timer/Window_timer/Panel/TimerLabel
+@onready var button_close_timer: TextureButton = $Window_timer/Button_close
 @onready var button_clock: Button = $Window_timer/Button_clock
 @onready var clock_sprite: AnimatedSprite2D = $Window_timer/Clock
 @onready var note_window: Window = $Window_note
 @onready var note_panel: Sprite2D = $Window_note/Window_note
 @onready var note_input: TextEdit = $Window_note/Window_note/TextEdit
+@onready var button_close_note: TextureButton = $Window_note/Button_close
 @onready var tip_window: Window = $Window_tip
 @onready var tip_panel: Sprite2D = $Window_tip/Window_tip
 @onready var tip_input: TextEdit = $Window_tip/Window_tip/TextEdit
@@ -432,9 +434,36 @@ func _apply_window_scale() -> void:
 	timer_window.size = Vector2i(Vector2(base_timer_window_size) * window_scale)
 	note_window.size = Vector2i(Vector2(base_note_window_size) * window_scale)
 	tip_window.size = Vector2i(Vector2(base_note_window_size) * window_scale)
+	_layout_popup_windows()
+
+
+func _layout_popup_windows() -> void:
+	var scale_vec = Vector2(window_scale, window_scale)
+	var timer_background: Control = timer_panel.get_node("Panel")
+	timer_background.scale = Vector2.ONE
+	timer_background.size = Vector2(timer_window.size) / window_scale
+	button_clock.scale = Vector2.ONE
+	button_clock.size = Vector2(timer_window.size)
+	note_input.position = Vector2.ZERO
+	note_input.size = Vector2(note_window.size) / window_scale
+	for popup_window in [timer_window, note_window]:
+		var close_button: TextureButton = popup_window.get_node("Button_close")
+		close_button.scale = scale_vec
+		close_button.position = Vector2(popup_window.size.x - 24.0 * window_scale, 4.0 * window_scale)
 
 
 func _connect_signals() -> void:
+	if not button_close_timer.pressed.is_connected(_close_timer_window):
+		button_close_timer.pressed.connect(_close_timer_window)
+	if not button_close_note.pressed.is_connected(_hide_note_window):
+		button_close_note.pressed.connect(_hide_note_window)
+	if not timer_window.close_requested.is_connected(_close_timer_window):
+		timer_window.close_requested.connect(_close_timer_window)
+	if not note_window.close_requested.is_connected(_hide_note_window):
+		note_window.close_requested.connect(_hide_note_window)
+	for popup_window in [timer_window, note_window]:
+		if not popup_window.size_changed.is_connected(_layout_popup_windows):
+			popup_window.size_changed.connect(_layout_popup_windows)
 	if not idle_variant_timer.timeout.is_connected(_on_timer_idle_variant_timeout):
 		idle_variant_timer.timeout.connect(_on_timer_idle_variant_timeout)
 	if not button_pet.pressed.is_connected(_on_button_pet_pressed):
@@ -1429,10 +1458,17 @@ func _finish_timer() -> void:
 
 
 func _dismiss_clock_alarm() -> void:
+	_close_timer_window()
+
+
+func _close_timer_window() -> void:
+	timer_end_time = 0.0
+	timer_seconds_remaining = 0
+	_update_timer_label()
 	button_clock.disabled = true
 	clock_sprite.hide()
 	clock_sprite.stop()
-	clock_sprite.play("idle")
+	clock_sprite.frame = 0
 	timer_window.hide()
 
 

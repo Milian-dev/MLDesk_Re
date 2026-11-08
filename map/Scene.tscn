@@ -5,6 +5,9 @@
 [ext_resource type="Theme" uid="uid://dkt1t08oavra3" path="res://ui/GUI.tres" id="5_eort7"]
 [ext_resource type="Texture2D" uid="uid://dfhuux6h0ch43" path="res://assets/clock.png" id="6_dob7g"]
 [ext_resource type="PackedScene" uid="uid://k352vr0oxw72" path="res://map/GUI.tscn" id="6_eort7"]
+[ext_resource type="Texture2D" uid="uid://dq2whd61xcnu5" path="res://ui/checkbox_closed.png" id="7_close"]
+[ext_resource type="Script" uid="uid://bnss3dwf4j2lx" path="res://scripts/PopupWindow.gd" id="8_popup"]
+[ext_resource type="Texture2D" uid="uid://bvu5tk1m2ee6e" path="res://ui/window.png" id="9_note_frame"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nxogm"]
 
@@ -58,6 +61,18 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_note"]
+content_margin_left = 6.0
+content_margin_top = 28.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+texture = ExtResource("9_note_frame")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 84, 100)
+
 [node name="Scene" type="Node2D" unique_id=842160943]
 script = ExtResource("1_66br4")
 
@@ -93,6 +108,7 @@ visible = false
 borderless = true
 always_on_top = true
 transparent = true
+script = ExtResource("8_popup")
 
 [node name="Button_clock" type="Button" parent="Window_timer" unique_id=1800285286]
 self_modulate = Color(1, 1, 1, 0)
@@ -137,6 +153,23 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_2lf55")
 animation = &"timeup"
 
+[node name="Button_close" type="TextureButton" parent="Window_timer" unique_id=1898830271]
+z_index = 10
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 24.0
+grow_horizontal = 0
+tooltip_text = "Close timer"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_close")
+ignore_texture_size = true
+stretch_mode = 3
+
 [node name="Window_note" type="Window" parent="." unique_id=931883764]
 transparent_bg = true
 oversampling_override = 1.0
@@ -145,6 +178,7 @@ visible = false
 borderless = true
 always_on_top = true
 transparent = true
+script = ExtResource("8_popup")
 
 [node name="Window_note" type="Sprite2D" parent="Window_note" unique_id=431993006]
 self_modulate = Color(1, 1, 1, 0)
@@ -155,6 +189,29 @@ region_rect = Rect2(0, 0, 300, 100)
 offset_right = 300.0
 offset_bottom = 200.0
 theme = ExtResource("5_eort7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_note")
+theme_override_styles/focus = SubResource("StyleBoxTexture_note")
+theme_override_styles/read_only = SubResource("StyleBoxTexture_note")
+context_menu_enabled = false
+wrap_mode = 1
+caret_move_on_right_click = false
+
+[node name="Button_close" type="TextureButton" parent="Window_note" unique_id=180877660]
+z_index = 10
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 24.0
+grow_horizontal = 0
+tooltip_text = "Close note"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_close")
+ignore_texture_size = true
+stretch_mode = 3
 
 [node name="Window_tip" type="Window" parent="." unique_id=183001047]
 transparent_bg = true

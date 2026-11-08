@@ -4,8 +4,8 @@
 		"window_scale": 1,
 		"clock_size": 1.5,
 		"startup_enabled": false,
-		"tilt_deadzone": 300,
-		"tilt_fast_threshold": 600,
+		"tilt_deadzone": 20,
+		"tilt_fast_threshold": 300,
 		"stat_min": 0,
 		"stat_max": 3,
 		"stat_low_threshold": 2,
@@ -17,7 +17,7 @@
 		"note_window_size": [300, 200],
 		"pet_window_size": [100, 100],
 		"note_save_delay_seconds": 0.5,
-		"tips_show_seconds": 4,
+		"tips_show_seconds": 15,
 		"setting_window_leave_grace_seconds": 0.5
 	},
 	"animations": {
