@@ -1,935 +1,248 @@
-蜜蜂可以识别人的面孔。
-海星没有大脑，但它们能够感知周围的环境。
-世界上最长的街道是加拿大的Yonge Street，长度达1896公里。
-人类的胃酸足以溶解金属，但胃壁有一层保护膜，防止其被腐蚀。
-章鱼有三个心脏，其中两个用于给腮供血，另一个用于给身体供血。
-你出生时的骨头数量比你成年时还要多，成年人体内有206块骨头，而新生儿有超过270块骨头。
-斑马的条纹是独一无二的，就像人类的指纹一样。
-袋鼠无法向后跳。
-太阳的质量占据了整个太阳系质量的99.86%。
-人类的鼻子可以区分出超过一万种不同的气味。
-香蕉是天然的辐射源，因为它们含有钾-40这种放射性同位素。
-海马是唯一一种由雄性怀孕的动物。
-蜗牛可以睡上三年，特别是在食物缺乏的情况下。
-牛的眼睛可以看到360度的视野，几乎没有盲区。
-猫咪的心跳比人类快，大约每分钟140到220次。
-人类与香蕉的DNA相似度大约是60%。
-鲸鱼的歌声可以传播数百公里，有时甚至可以传到不同的海洋。
-大象是唯一不怕蚂蚁的动物。
-有些乌龟可以通过嘴巴呼吸。
-火烈鸟的颜色来自它们的食物，主要是从藻类和小虾中获得的类胡萝卜素。
-企鹅是唯一一种不会飞的鸟，但它们游泳速度非常快，可以达到每小时36公里。
-树懒每天大约有20小时是在睡觉或休息。
-土星的环并不是固体物质，而是由数以亿计的冰雪颗粒组成。
-人类的眼睛在一生中大约能够眨眼42亿次。
-世界上最轻的金属是锂，比水还要轻。
-奥斯卡奖杯的高度为34厘米，重量为3.8公斤，由80%的黄金和20%的银组成。
-袋鼠的跳跃速度可以达到每小时72公里。
-鲸鱼的舌头重量相当于一辆象车。
-猫的胡须不仅用于感觉，还可以帮助它们在黑暗中判断空间。
-树木之间通过地下的真菌网络进行信息交流，类似于“森林的互联网”。
-人类的唾液每天大约能分泌1到1.5升。
-一只大象的怀孕期是22个月，是所有陆地动物中最长的。
-蝙蝠是唯一能够持续飞行的哺乳动物。
-蜘蛛丝比钢铁更强韧，同等重量的蜘蛛丝能承受的拉力比钢铁还大。
-金鱼的记忆并不是三秒钟，它们的记忆可以持续几个月。
-世界上最小的鸟是蜂鸟，它们的体重大约只有2.6克。
-人类的指甲生长速度大约是每月3毫米。
-土耳其的某些地方有“温泉水上游”，温暖的泉水通过管道流经街道，居民可以随时浸泡。
-马可以睡觉时站着，也可以躺着睡。
-某些种类的蚂蚁能形成“浮动岛”，通过把自己和同伴聚集在一起漂浮在水面上。
-海豚有名字，并且通过不同的叫声来辨识彼此。
-章鱼的血是蓝色的，因为它含有铜基的血红蛋白。
-树木通过释放香气来吸引或驱赶昆虫，作为保护机制。
-猫咪的耳朵可以旋转180度，帮助它们在不同方向听到声音。
-宇航员在太空中会比在地球上长高约2到5厘米，因为重力较小，脊柱不受压缩。
-月亮每年离地球大约远离3.8厘米。
-人类的皮肤大约有200多个不同种类的细菌，绝大多数是无害的。
-松鼠的前牙永远不会停止生长，因此它们需要不断磨牙。
-海马是鱼类中唯一一种由雄性负责怀孕并产卵的物种。
-蜂鸟可以倒着飞，也是唯一能悬停的鸟类。
-袋熊的粪便是立方体形状，有助于标记领地时不易滚落。
-北极的冰实际上是淡水冰，而南极的冰盖储存了全球约70%的淡水。
-鳄鱼无法伸出舌头，它们的舌头被固定在嘴巴底部。
-人的胃每三到四天就会完全更换一次内壁组织，以防止被胃酸腐蚀。
-有些乌贼拥有三颗心脏，其中两颗负责为鳃供血，一颗负责为全身供血。
-蜻蜓的飞行速度可以达到每小时56公里，是昆虫中最快的。
-南极洲实际上是地球上最大的沙漠，按降水量计算。
-彩虹其实是圆形的，只是在地面上我们只能看到一部分圆弧。
-人类平均每天会掉落大约50到100根头发。
-北极熊的皮肤其实是黑色的，毛发是透明的，只是看起来是白色的。
-闪电的温度可以达到3万摄氏度，比太阳表面还要高5倍。
-蜂群中的工蜂一生大约只能生产一汤匙的蜂蜜。
-地球上的氧气最早来自蓝藻的光合作用，约在24亿年前开始。
-水熊虫（缓步动物）能在真空、强辐射和极低温度下生存。
-人类的DNA和黑猩猩的相似度高达98.8%。
-银河系每秒大约诞生7颗新恒星。
-地球的内核温度接近6000摄氏度，几乎与太阳表面温度相同。
-火山爆发时释放出的能量可以比数百颗核弹还要强大。
-树木通过叶片上的气孔进行气体交换，同时调节水分蒸发和温度。
-深海里有些鱼类能发出自己的光，这是生物发光现象。
-地球上99%以上的物种已经灭绝。
-银杏树被称为“活化石”，已经在地球上生存了超过2亿年。
-大象可以用超声波进行远距离交流，人耳听不到。
-宇宙中绝大多数的物质是暗物质和暗能量，人类对它们几乎一无所知。
-蜂鸟的心跳在飞行时可以达到每分钟1200次。
-人体内的铁足够制造一颗两厘米长的小钉子。
-蝴蝶的味觉感受器长在它们的脚上。
-地球大气层的厚度相对于地球来说，比例大约相当于苹果上的果皮那么薄。
-地球磁场每几十万年会发生一次磁极反转。
-有些珊瑚是动物和植物的共生体，珊瑚虫与藻类共存才能存活。
-地球自转速度正在逐渐变慢，每过几百万年，地球上的一天就会更长一些。
-闪电可以在火山喷发时产生，叫做“火山闪电”。
-大多数哺乳动物都能合成维生素C，唯有人类、猿类和豚鼠失去了这项能力。
-木星上最大的风暴“大红斑”已经存在了至少350年。
-地球上最坚硬的天然物质是钻石，但某些实验室制造出的材料已经超过钻石硬度。
-金星自转方向与其他行星相反，太阳在它的天空中是从西边升起。
-深海里有一种“吸血鬼乌贼”，虽然名字可怕，但它主要吃有机碎屑。
-在地球深处约150公里以下，有可能存在“钻石雨”。
-北极光和南极光是高能带电粒子与地球磁场相互作用产生的发光现象。
-人一年呼吸大约一亿次。
-人体有六百条以上的肌肉：微笑只需要17条肌肉，而皱眉需要24条。
-人吃太饱听力会变差。
-手指甲的生长速度是脚趾甲的4倍。
-你的胃每两周就会长出一层新的黏膜，否则它会自我消化。
-成年人每天平均要产生约1.5升的口水。
-人类胎儿在三个月大时就有指纹了。
-小孩子的骨头数量比成年人多100根以上，这是因为关节附近有一些骨头会融合。
-打喷嚏时无法睁着眼睛。
-血管长度可以绕地球两圈以上。
-血液在你的身体中循环一圈需约20秒。如果一个人活到80岁，血液会在他体内循环12亿次以上。
-戴一小时耳机，耳朵里的细菌可增加700倍。
-人类消化系统大约9米长。
-人的大脑大约有860亿个神经元，约重1.4公斤。
-屁股的作用是维持我们奔跑时的稳定性。
-尿液在显微镜下非常漂亮，呈现七彩的晶体。
-正常体重下，两只拳头的周长大致接近肾脏的周长。
-你的身体大概包含7万亿到30万亿个细胞。
-体内细菌的数量比体细胞还多，总重量大约在3斤左右。
-你的大脑大约有250GB到5TB的存储容量。
-人一天大约产生30万到60万个皮肤死细胞，也就是说你家里的灰尘很多来自你身体上的掉屑。
-你体内的铁元素可以制造一枚4公分长的钉子。
-人舔不到自己的手肘。
-人的眼睛能分辨超过1000万种颜色。
-成年人的骨髓每天大约制造2亿个红细胞。
-心脏一生大约跳动30亿次左右。
-人的听觉可以感知20赫兹到20000赫兹的频率范围。
-每个人身上都有大约2平方米的皮肤。
-人类大脑的能量消耗约占人体总能量的20%。
-人体内最长的细胞是腿部的坐骨神经，长达一米多。
-人类肠道内的微生物种类超过1000种。
-人体内每秒大约有2500万个细胞死亡并被替换。
-人类眼泪含有天然的杀菌酶，能防止眼部感染。
-人的骨骼在30岁前后最为致密，之后逐渐减少。
-人在太空中会因为失重而变高2到5厘米。
-耳垢其实是一种天然的耳道清洁剂，能防止灰尘和细菌进入。
-舌头上味蕾的数量约为2000到8000个。
-人的牙釉质是人体内最坚硬的组织。
-婴儿出生时膝盖其实是软骨，到2~6岁才逐渐骨化成型。
-静脉中的血其实也是红色的，看起来发蓝只是光的折射作用。
-人在夜晚的身高会比早晨矮1-2厘米，因为脊椎在白天会被压缩。
-大多数人在睡觉时会平均做4到6个梦，但醒来后往往只记得很少一部分。
-人的打喷嚏速度可以达到每小时160公里。
-可乐最早是作为药品发明的，用于治疗消化不良和神经疲劳。
-微波炉加热食物的原理是激发水分子震动生热。
-冰淇淋吃太快会引发所谓的“脑冻”，其实是脑部血管突然收缩所致。
-人在完全安静的环境里，能听到自己心脏跳动、血液流动的声音。
-不锈钢其实会生锈，只是速度远远低于普通钢材。
-番茄在植物学上属于水果，但在烹饪上一般当蔬菜使用。
-世界上最长寿的灯泡已经连续亮了120多年。
-绝大多数手机其实比登月用的阿波罗飞船计算机还要强大几百万倍。
-人的指甲在夏天比冬天长得更快。
-咖啡豆其实是咖啡树果实里的种子。
-洗手时用冷水和温水去除细菌的效果几乎没区别，关键是洗手时间和揉搓力度。
-牛奶中的乳糖不耐症是人类进化过程中的一种变异，本来成年后就不应再能消化乳糖。
-薯片袋里充的不是空气，而是氮气，防止氧化和碎裂。
-全世界每天约消耗掉20亿杯咖啡。
-有些洗发水里的“无硅油”其实对头皮并没有绝对好坏，更多是一种市场标签。
-打哈欠其实具有“社交传染性”，看到别人打哈欠时大脑镜像神经元会被激活。
-人的嘴唇是全身皮肤最薄的地方，只有大约3~5个细胞层。
-蜂蜜是少数可以几乎永远不腐坏的天然食物。
-切洋葱时流泪，是因为释放出的硫化物与眼泪中的水反应生成硫酸。
-马桶的冲水方向在赤道两侧略有不同，这是科里奥利效应的一种微弱表现。
-冰块比水更容易导电，因此含冰饮料被泼到电子设备上时更容易短路。
-雨后的泥土有股“土腥味”，那其实是放线菌产生的土臭素。
-牙膏中加入薄荷味，除了清新，还能通过刺激神经减少口腔疼痛感。
-微波炉里的食物容易出现“加热不均匀”是因为部分位置形成驻波节点。
-左撇子在世界人口中占比大约10%，但他们在某些体育项目上具有天然优势。
-洗衣服时的柔顺剂原理是让衣物表面带有微弱静电，从而减少摩擦。
-绝大多数飞机餐其实在地面上就已经完全烹饪好，只需在高空简单加热。
-手机震动功能其实是靠一个不平衡的小电机快速旋转产生离心力。
-蚊子更喜欢叮咬体温高、呼吸频率快、代谢旺盛的人。
-塑料瓶盖比瓶身更难降解，是因为材质不同，瓶身通常用PET，瓶盖用HDPE。
-人在长期暴露蓝光环境下容易抑制褪黑素分泌，影响睡眠。
-电梯内的镜子最早是为了缓解乘客的等待焦虑而设计的。
-牛奶泡茶时应先倒茶再倒奶，这样能防止蛋白质因高温凝结。
-香菜的“臭味”其实是一部分人基因决定的，他们会把香菜中的醛类物质识别为肥皂味。
-泡面里的“防腐剂”其实很少，主要靠脱水保存。
-光脚踩在瓷砖上觉得凉，是因为瓷砖导热快而不是温度低。
-感冒其实不是因为受寒，而是病毒感染，只是寒冷天气让病毒更容易传播。
-超市里的背景音乐节奏通常偏慢，目的是让顾客放慢脚步、多逛一会儿。
-人醒着的时候比睡觉时多消耗约15%的卡路里。
-衣服晾在阴凉通风处，有时比暴晒更容易干，因为强风能加速蒸发。
-指甲在利手（常用手）一侧通常长得比另一只手更快。
-闻柑橘类气味可以短暂提升人的注意力和专注度。
-咬冰块对牙釉质伤害很大，容易造成微裂纹。
-现代纸币其实并不完全是纸，大多由棉纤维与聚合物混合制成。
-可乐倒进生锈的螺丝孔里能帮助去锈，因为含有磷酸。
-香蕉的自然“弯曲”是因为向光性，生长时会主动往光亮处弯曲。
-彩色打印机里的黑色墨水叫“K色”，因为用“B”容易和蓝色（Blue）混淆。
-咖啡刚煮好时其实苦味较淡，放凉后苦味会明显增强。
-室内植物能改善空气湿度，但净化空气效果其实非常有限。
-蜂蜜如果自然结晶，其实是正常现象，说明蜂蜜纯度高。
-苹果切开后变色，是因为果肉中的酚类被空气氧化产生褐变。
-高铁座椅靠背上有挂钩，设计初衷是挂外套或购物袋，不是装饰。
-头发在潮湿环境下更容易断裂，因为角蛋白吸水膨胀后韧性下降。
-咳嗽时用手捂嘴，会把大量飞沫直接集中到手上，更容易传播病菌。
-超声波清洗机其实是靠“空化效应”把污渍震出来的。
-酒店床单一般都是纯白色，方便漂洗高温消毒和检测污渍。
-牙线的清洁效果比牙刷重要得多，但经常被忽视。
-大部分人的左右眼视力其实存在微小差距，只是日常中不容易察觉。
-大部分电梯按钮其实在按下后立刻响应，反复按并不会加快速度。
-机场跑道编号来源于其磁方位角度，例如“09”代表90度正东。
-新买的衣服有时带有“新衣味”，其实是防皱和抗菌处理残留的化学物质。
-LED灯泡并不容易吸引昆虫，因为几乎不产生紫外光。
-冰箱门越频繁打开，内部结霜速度就越快。
-行驶中的汽车轮胎，其实与地面接触面积仅有一张明信片大小。
-人站在山顶会感到耳鸣，是因为气压降低导致耳膜鼓膜微张。
-打包饭盒里的“干燥剂”大多是二氧化硅，不能食用，但也不含毒性。
-塑料瓶底部的数字标识代表材质种类，并非可重复使用的次数。
-剃须刀片其实不是越多越好，刀片越多越容易拉扯皮肤。
-雨后路上常有蚯蚓爬出地面，是因为土壤含氧量降低，它们出来换气。
-口香糖并不会被胃部消化，但通常会顺利排出体外。
-新鲜牛奶呈微微蓝色，是因为蛋白质折射光线的缘故。
-红葡萄酒中的单宁会与口腔蛋白质结合，产生“涩感”口感。
-人体皮肤的汗腺总数大约有300万个。
-洗澡水温超过40°C容易破坏皮肤表层油脂屏障。
-长时间使用耳机容易导致耳道湿度上升，滋生细菌。
-地铁列车大多使用“钢轮钢轨”系统，效率远高于橡胶轮胎。
-常见食盐中的“加碘”政策，有效预防了甲状腺肿大（大脖子病）大面积流行。
-睡觉时枕头高度过高会影响颈椎曲线，长期易导致颈肩不适。
-感冒并不是因为受凉，而是病毒感染，寒冷只是让病毒更容易传播。
-尿液在正常状态下其实是无菌的。
-打雷时闪电其实先发生，打雷的声音是光速与音速差距造成的延迟。
-人的体温并不是恒定的37°C，健康人群波动范围可在36.1°C到37.2°C之间。
-咖啡其实不会真正“补充能量”，而是暂时抑制了大脑的疲劳信号。
-指甲剪掉后并不会感觉痛，是因为指甲本身没有神经。
-地球上最多的氧气并不来自森林，而是来自海洋中的浮游植物。
-人的骨头比钢铁更坚硬（单位重量下的抗压强度）。
-剃毛不会让毛发变粗，那只是新长出的毛发截面看起来更粗。
-北极并不是地球上最冷的地方，南极比北极冷得多。
-维生素C并不能直接治感冒，只是在预防上有轻微辅助作用。
-塑料吸管禁用的环保意义其实非常有限，塑料污染的主要来源是渔网和大型塑料垃圾。
-人的脑容量和智商之间并没有直接正比关系。
-糖尿病患者能吃糖，重点在于控制总摄入量与血糖管理。
-闪电可以在没有下雨的天空中出现，这种现象叫“干闪电”。
-香蕉其实是浆果，而草莓在植物学上反而不算真正的“浆果”。
-人真正开始衰老的速度其实在25岁后就已逐渐启动。
-头发的“分叉”是因为角蛋白链断裂，跟营养补充关系不大。
-摩天大楼在设计时会允许轻微晃动来抵御强风和地震。
-微波炉加热其实并不会破坏营养，比煮熟、煎炸更保留营养成分。
-金鱼的记忆并不是三秒，而是可以长达数月。
-闪电可以多次击中同一地点，尤其是高楼、塔尖。
-维生素片吃太多反而可能对身体有害。
-跑步时膝盖并不会因此受损，合理跑步反而对膝盖有保护作用。
-太空中并不是完全“无重力”，而是“微重力”环境。
-冰川其实是流动的，只是速度极慢。
-牛奶不含铁，所以婴儿长期只喝牛奶容易贫血。
-头发长时间湿着睡觉并不会直接感冒，但易滋生细菌和真菌感染。
-喝冰水不会让脂肪燃烧变快，消耗的热量极其微小。
-手机夜间护眼模式能减少蓝光刺激，但无法完全避免生物钟紊乱。
-宇航员在太空其实不会“漂浮不动”，身体会持续缓慢移动。
-灯泡其实并不会越亮越费电，LED在高亮度下能更高效。
-打哈欠的主要功能并不是缺氧，而是帮助大脑降温。
-“出汗能排毒”其实是误解，大部分毒素靠肝脏与肾脏代谢排出。
-血液呈红色是因为血红蛋白中的铁离子，而不是血本身的颜色。
-手机飞行模式并不能完全屏蔽辐射，只是中断信号通讯。
-巧克力中的可可碱对狗有毒，但人可以安全代谢。
-骨头骨折时疼痛主要来自断裂周围组织的损伤，而不是骨头本身。
-多喝水不能“冲淡血糖”，血糖靠胰岛素调节。
-人的视觉盲点每天都在填补，大脑实时自动修补我们看不到的区域。
-汉语中最常用的一个字是“的”。
-世界上使用人数最多的语言是英语，但母语人数最多的是汉语。
-“你”这个字在古汉语中原指尊称，“汝”才是普通用法。
-世界上最长的单词来自化学领域，有18万个字母，是某种蛋白质的化学名称。
-日语中的“ありがとう”（谢谢）本义是“难得发生的事”。
-韩语的字母系统（韩文）是人为设计的，发明者是世宗大王。
-英语中“set”是拥有最多释义的单词，词典中有超过430种意思。
-“Emoji”这个词源自日语“絵文字”，不是“emotion + icon”的缩写。
-法语里数字“80”是“四二乘二十”（quatre-vingts），而不是八十。
-意大利语中“ciao”既可以表示“你好”，也可以表示“再见”。
-汉字“囍”其实不是异体字，是“喜喜”并列的合文，常用于婚庆。
-中文拼音中的“ü”其实就是德语里的“ü”，音值完全一样。
-俄语的“да”（yes）和“нет”（no）在不同语境中可以互换逻辑，令人困惑。
-古英语中“girl”原意是“年轻人”，可以指男孩也可以指女孩。
-拉丁语没有句号，古文是连续书写的，要靠语感断句。
-在某些非洲语言中，“打嗝”或“舌弹”是语音的一部分。
-语言学上没有“原始语言”这个绝对概念，所有语言都有规则与系统。
-芬兰语中“kalsarikännit”指的是“穿着内衣独自在家喝醉的状态”。
-中文是世界上唯一一个仍在广泛使用表意文字的主要语言系统。
-婴儿在牙牙学语前能分辨几乎所有语言的音位，但之后会被母语“训练”限制感知范围。
-中文里的“他”原本男女通用，直到20世纪才人为区分出“她”“它”等形式。
-古代汉语中“吾”“我”“余”“予”都可以表示“我”，但语气、身份层次不同。
-英语中“goodbye”其实来自“God be with ye”（愿上帝与你同在）。
-“nice”在古英语中原意是“愚蠢的”，后经多次语义转变才成了“好”。
-法语中“chaussette”（袜子）源自拉丁文“calceus”，意思是“鞋子”。
-“robot”（机器人）来自捷克语，原意是“苦力”“强制劳动者”。
-汉字“爱”在古代的写法中没有“心”字，现代结构是简化中的复古改造。
-日语中的“すみません”（对不起）原意更接近“让我感到不安”，表达歉意只是延伸用法。
-世界上有些语言是“哨语”，靠口哨进行交流，如土耳其的库什德语。
-现代英文拼写混乱很大一部分是因为古腾堡印刷术推广时拼写尚未统一。
-“window”在英语中来自古挪威语“vindauga”，意思是“风之眼”。
-德语中名词首字母必须大写，这是世界上极少数有此规定的语言。
-拉丁文中没有“J”和“W”这两个字母，都是后来才发展出来的。
-在语言学中，“双重否定”在很多语言中表示加强语气，而不是“肯定”。
-芬兰语几乎没有未来时态，它用现在时配合上下文表达未来。
-阿拉伯语从右向左书写，但数字却从左往右写，是世界上唯一“双向混合”的主流书写系统。
-汉语成语“四面楚歌”的“歌”是楚人唱的歌，不是“歌颂”而是“心理打击”。
-“OK”最早可能是美国一位总统竞选时的玩笑缩写，意为“all correct”故意拼成“oll korrect”。
-“hamburger”不是“火腿堡”的意思，它起源于德国汉堡（Hamburg）这座城市。
-很多语言中“妈妈”的词根都类似“ma”，是因为婴儿本能发音偏向双唇音。
-世界上唯一一个“没有母语”的语言是世界语（Esperanto），它是人造的，但至今有很多孩子是以它为第一语言成长的。
-日语里“失礼します”不仅是告辞用语，也可以用来进入房间或打断别人讲话。
-英语中的“wife”源于古英语“wif”，本义是“女性”，现代才变成“妻子”的意思。
-中文的“电脑”是现代新造词，港台早期曾用“电脑机”、“电子脑”甚至“智力机器”。
-韩语中的“oppa”（哥哥）不仅是血缘关系用语，也可用于情侣之间，甚至带点撒娇意味。
-瑞典语里“gift”可以同时表示“已婚”和“有毒”，所以说婚姻是……？
-世界上最长的官方语言名是新西兰的毛利语地名：“Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu”。
-拉丁文没有小写字母，小写是在中世纪为了抄写效率而发明的。
-古埃及象形文字中，有“拉屎的人”的字，真实使用于“厕所”或“排泄”相关文本中。
-日语的汉字读音有“音读”和“训读”，意思是一个字常有两种以上完全不同读法。
-现代汉语拼音中的“z”“c”“zh”等音，在西方人看来是完全反直觉的发音组合。
-“hello”并不是一开始就用于打招呼，它在19世纪初只是表示“喊叫”或“引起注意”。
-世界上最难翻译的词之一是葡萄牙语的“saudade”，表示一种既思念又悲伤又甜美的情绪混合。
-法语中有一种语法现象叫“虚拟式过去完成时”，几乎没人用，但语法书一定会教。
-藏语中的“青稞”叫“ནས་”，是藏区的主粮，也是一种象征身份的语言词汇。
-英语中“they”现在被正式认可为单数性别中立代词，用于不指明性别的人。
-印地语和乌尔都语日常对话几乎一模一样，但书写系统完全不同，前者用天城文，后者用波斯文。
-“alphabet”这个词来自希腊语“alpha + beta”，本义是“字母表”。
-某些语言（如菲律宾语）会在句中用英文单词夹杂，当地人称其为“Taglish”（塔加洛语+English）。
-“语言”这个词的日文是“言語（げんご）”，韩文是“언어（eoneo）”，来源都是汉字“言”。
-“Girl” 在古英语中并不特指女孩，而是泛指“年轻人”，男女都行。
-“Book” 和 “beech”（山毛榉树）有词源关系，因为欧洲早期写字刻在山毛榉木板上。
-英语中“friend”可以作动词，比如 “I friended her on Facebook.”
-“Sheriff” 源自“shire reeve”，意指“郡的执政官”，是中世纪英国的官职名。
-“Muscle” 来自拉丁语“musculus”，原意是“小老鼠”，因为古人觉得肌肉像在皮下爬的老鼠。
-英语中最长没有元音的单词是“rhythms”。
-“Awful” 原意是“充满敬畏的”，与“awesome”意思相近，是后来语义变化才变成“糟糕”。
-“I” 是唯一一个必须大写的英语代词，这是语言中非常罕见的现象。
-“Knight” 的“K”虽然不发音，但在中古英语时期是有读音的，像“kuh-nicht”。
-英语拼写并不统一是因为中世纪印刷术传播时，各地发音差异未统一，但拼法被定格下来。
-英语中的“orange”是一个色彩名称，但最早表示的是水果，颜色用这个词是后来才有的。
-“Goodbye” 源自 “God be with ye”（愿上帝与你同在），经历语音压缩演变成今天的形式。
-“Alphabet” 这个词本身是“Alpha + Beta”，来自希腊文第一个和第二个字母。
-英语中最长的单词之一是 “antidisestablishmentarianism”，但并不是最难的；最长的是化学名称，有18万个字母。
-“Nice” 曾经是骂人的词，在中世纪意为“愚蠢、笨拙”。
-在莎士比亚时代，“thou” 是对熟人或地位低者使用的“你”，“you” 反而是尊称。
-“Pineapple” 原本指的是“松果”，后转指凤梨（因为形似），而不是“苹果”。
-英语中“cleave” 既可以表示“劈开”，也可以表示“紧贴”，是少数同时拥有反义双义的词。
-“Let” 既有“允许”之意，也保留了古义“阻止”，例如网球比赛的“let ball”。
-“Pronunciation” 的拼法故意和“pronounce”不同，是语言学家设计的，强调“名词化”的形式。
-中国古代的“红色”并不总象征喜庆，战国时红色也被用于丧服。
-西方“举杯”源于中世纪的防毒仪式，人们碰杯是为了让酒液混合，以示无毒。
-埃及法老常把自己刻成“半兽”是为了象征神权，而非美学原因。
-日本人吃年糕（お餅）是新年习俗，但年年有人因此噎死，政府每年都发提醒。
-意大利人忌讳13，但巴西人忌讳24，日本人忌讳4和9，数字迷信因文化而异。
-印度用右手吃饭是礼仪，左手被认为是不洁净的。
-古希腊奥运会原本是裸体进行的，运动员为展现人体之美而全裸竞技。
-西藏传统葬礼中有“天葬”，把遗体献给秃鹫，被认为是一种尊重自然的方式。
-西方婚礼中的“戴戒指在左手无名指”起源于古埃及人认为那根手指直通心脏。
-韩国人在出生时默认1岁，而不是0岁，这是他们的“虚岁”传统。
-在马达加斯加，有的族群会定期把祖先的遗体取出跳舞，表示思念。
-越南春节时忌扫地，认为会把好运扫走，这与中国“年初一不扫地”传统类似。
-阿拉伯国家普遍不吃猪肉，不仅出于宗教，也是因为猪在沙漠中难以饲养。
-欧洲中世纪城堡设计中的“旋转楼梯”多为顺时针，是为了右手持剑的守卫防御方便。
-英国下午茶原本是女贵族打发“晚饭前饥饿”的私人习惯，后来才流行。
-泰国皇室极为神圣，侮辱王室可判重刑，连踩泰铢上的头像都可能违法。
-中国古代有“重男轻女”但也有“女主中馈”，妇女掌厨和财权极常见。
-中东斋月期间，白天不能饮食，但夜间常有丰盛的“破斋”聚餐。
-西方“黑猫不祥”起源于中世纪女巫传说，而在日本黑猫反而象征好运。
-玛雅文明没有金属工具，却能精准计算日食与行星周期，历法精度惊人。
-在蒙古，递东西给别人用右手同时轻触右臂被视为礼貌举止。
-非洲马赛人不会以“你好吗”打招呼，而是问：“你们的牛好吗？”
-阿根廷人晚餐时间非常晚，常常要到晚上9点以后才开始吃。
-在俄罗斯，空手登门是不礼貌的，即使只带一包糖果也比空手强。
-在泰国，摸别人的头是一种极大的冒犯，即使是小孩也不可以随便摸头。
-西方圣诞老人的“红衣装扮”是1930年代由可口可乐广告定型普及的。
-印度人婚礼动辄三天三夜不稀奇，仪式复杂到外人常常跟不上节奏。
-越南人扫墓叫“清明”，但会在正月前后进行“春节扫墓”，跟中式清明不同。
-美国人不擅长用筷子，但韩国和日本用筷子的方式也不一样，日本是木筷偏细，韩国多用金属筷且带纹。
-在芬兰，“坐公共桑拿”是一种日常社交行为，和赤裸不代表任何羞耻。
-在墨西哥，“亡灵节”是缅怀死者的节日，但氛围是喜庆的，人们会吃“骷髅糖”、化骷髅妆。
-阿拉伯传统待客方式里，招待三杯茶分别象征“生命”“爱情”“死亡”。
-尼日利亚有250多种语言，是世界上语言最多样的国家之一。
-在瑞士，法律禁止在晚上十点后冲马桶（公寓楼中），为的是避免噪音扰民。
-在伊朗，习惯上第一次邀请往往是假客气，对方要坚持三次才会“真请你吃饭”。
-中国古代“避讳”文化极强，连皇帝的名讳都不能写，甚至要改字避开。
-在埃塞俄比亚，他们采用自己的“13个月”日历系统，与格里历有7~8年误差。
-在日本，“沉默”常被视为一种礼貌和深思熟虑的表达，而非尴尬。
-在挪威，圣诞节期间人们会藏起扫帚，源自古老迷信：防止女巫飞行。
-在伊斯兰国家，斋月期间日出到日落都不能饮食、吸烟、喝水，违者属重大冒犯。
-在冰岛，电话簿是按人名排列而不是姓氏，因为那里没有“姓”，只有父名或母名。
-在埃及婚礼上，新娘被允许用脚踩新郎，寓意未来能掌控家庭主导权。
-中国古代女子忌讳名字中有“贞”“烈”字，否则可能一生被道德束缚。
-在肯尼亚某些部落，向人吐口水是一种祝福的礼仪，象征“好运”。
-在西班牙，跨年时人们会在午夜钟声响起的12秒内吃下12颗葡萄，每颗象征一个月的好运。
-在日本，收红包时必须表示拒绝几次再接受才显得得体。
-在印度，婚礼前会举行一种“涂黄姜”仪式，用姜黄粉涂新郎新娘身体，以示净化与祝福。
-古代中国皇宫内“冷宫”不是某个具体房间，而是泛指失宠妃子的幽禁区域。
-在丹麦，如果你30岁还没结婚，朋友可能会把肉桂粉撒你一身，这是调侃但带点催婚意味的传统。
-在中国南方部分地区，葬礼有请“哭丧人”的传统，哭得越响说明孝心越深。
-在法国，“留胡子”在某些场合象征哲思与成熟，而在日本职场中可能会被认为“不干净”。
-在德国，生日当天提前祝福被认为是大不吉利的事情。
-在新西兰的毛利文化中，“贴鼻子”是表示欢迎和分享生命气息的传统问候方式。
-在巴厘岛，婴儿出生后前三个月不能碰地，以示神圣未沾尘世。
-在菲律宾，圣诞季从9月就开始，几乎是世界上最长的圣诞庆典。
-在摩洛哥，喝薄荷茶是待客礼仪，必须由主人倒三轮，分别象征“生命”“爱情”“友谊”。
-在印度尼西亚的巴厘岛，很多人没有姓，名字只根据出生顺序来，比如第一胎叫“Wayan”，第二胎叫“Made”。
-在法国吃面包时，把面包倒扣在桌子上是很不礼貌的，会被认为是“对别人不敬”。
-在中国西南某些民族，成年礼会通过“背母亲一段路”来表达成长与感恩。
-在美国，孩子拔牙后会把牙齿放在枕头下，等“牙仙子”来换钱，这是广泛流传的儿童文化仪式。
-在挪威，学生高考后会穿上特制连体衣（russedress），连疯玩两周庆祝“毕业季”。
-在中国西南苗族传统中，女生会用“甩绣球”来表达对心仪男生的情意。
-在非洲贝宁，巫术（伏都）是一种合法宗教，巫师地位与医生相当。
-在芬兰，扔手机比赛是一项正式的体育赛事，全国定期举办。
-在日本，进门时脱鞋不仅是卫生习惯，还象征“进入另一个社交角色”。
-在古代印度，跳“萨提”（Sati）的寡妇会被视为殉夫英雄，甚至被立碑纪念。
-在中国江南，生孩子送“红鸡蛋”是祝福的习俗，象征生命和好运。
-在俄罗斯，“笑太多”会被认为轻浮不稳重，因此俄罗斯人常被误解为“冷漠”。
-在印尼雅加达，马路旁的人行道上常有公共卡拉OK机器，大家随时上去唱歌。
-在尼泊尔，国旗是世界上唯一一个非矩形国家国旗，由两个三角形叠加组成。
-在阿根廷，孩子掉牙后不是等“牙仙子”，而是把牙放在水杯里给“小老鼠”换礼物。
-在中国某些地方，老人过寿要吃“长寿面”，面条不能断，象征命长不断。
-在波兰，人们相信窗户开着睡觉容易“被风吹中”，是感冒的主要原因。
-在沙特阿拉伯，女性曾长期禁止开车，直到2018年才正式解禁。
-在日本料理中，“吃出声音”反而被视为礼貌，表示你吃得开心。
-在哈萨克斯坦，马肉被视为高级食材，甚至比牛肉还贵。
-在韩国，公司聚餐时下属不能先动筷，要等上级动了才行。
-在以色列，人们用“猫的眼睛”形容小孩很聪明，而在某些文化中这却是贬义。
-在英国，早茶文化中“加奶顺序”是老生常谈的争论话题，有人坚信先奶有人坚持先茶。
-在南非，彩虹国之称来源于其拥有11种官方语言和极其多元的族群文化。
-在古巴，婚礼上宾客可以“付钱和新娘跳舞”，每跳一次贴一次钞票，表示祝福。
-在英国，如果你在傍晚喝红茶不加奶，有些老派贵族会觉得你“没有教养”。
-在摩洛哥传统茶道中，茶要倒得“越高越好”，表示技艺好、尊重客人。
-在拉脱维亚，圣诞节不送圣诞树，而是装饰“冬至树”，传统可追溯到异教时代。
-在印度，牛被认为是神圣的，走在路中间也不能驱赶，司机必须绕行。
-在瑞典，别人请你去家里吃饭，大概率不会让你一起吃，而是让你等他们吃完。
-在美国西部某些小镇，“扔鸡蛋”是万圣节传统，象征调皮捣蛋。
-在中东某些国家，露出脚底被视为极不尊重的行为。
-在缅甸，僧侣不能碰钱，必须靠信徒捐赠食物生活。
-在尼泊尔和印度北部，“粉节（洒红节）”是全民泼彩色粉末互祝好运的节日。
-在阿尔及利亚，某些婚礼可能持续整整七天，每天都有不同服饰和仪式。
-在中国部分地区，坐月子期间产妇不能洗头、不能吹风，这是传统的“产后养气”观念。
-在巴西，国人对足球热情极高，全国假期甚至会因为世界杯比赛而临时设立。
-在伊朗，每年春分日是波斯新年“诺鲁兹”，比伊斯兰历春节还隆重。
-在印度尼西亚巴厘岛，新年第一天叫“静默日”，所有人不出门、禁用火电网，全岛静止。
-在德国南部的啤酒节（Oktoberfest）中，酒杯“啤酒大麦杯”能装下一整升啤酒。
-在沙特，传统服饰白袍（thobe）不是宗教义务，而是因应沙漠高温而形成的文化习惯。
-在意大利，餐后喝咖啡一定是“浓缩咖啡”，点拿铁反而被视为“游客”。
-在秘鲁，人们在新年凌晨互相“打架”，释放过去一年的怨气，这叫“Takanakuy”。
-在菲律宾，一些村庄新年会往屋顶开枪“迎新”，为此政府每年都要呼吁“不要用真枪”。
-古代“书生赶考”通常带一根竹竿，不是防身，而是用来挑行李睡觉时架蚊帐。
-清朝前期，男人剃发留辫并非汉族传统，而是满清推行的“剃发令”，违者斩首。
-“红色”在古代并不总是喜庆之色，周朝时代表“兵戈、肃杀”，直到唐代才变吉祥。
-中国古代的“十二时辰”一个时辰等于现在的两小时，“子时”是夜晚11点到凌晨1点。
-“上头香”在寺庙是抢第一炷香，有求好运之意，但在部分民间也寓意“牺牲”，忌讳小孩去烧。
-古人写信落款常用“草草顿首”“谨启”“再拜”等辞令，是表示谦逊敬意而非官腔。
-传统服饰“盘扣”原为实用结构设计，用来替代金属钮扣，后来变成美学符号。
-明清婚礼中新娘盖的是红布叫“盖头”，掀盖前要用秤杆或尺子象征“公平”和“丈量幸福”。
-“守岁”不是不睡觉，而是“守着新岁降临”的礼俗，民间多为熬夜到子时放炮迎年。
-古代“元宵节”又叫“上元节”，当时是青年男女少有的公开社交机会，因此也称“东方情人节”。
-“黄历”上的“宜忌”系统，源于古代干支与占星系统，不同日子配不同五行活动。
-“投壶”原是贵族宴会间的投掷游戏，后演变为礼仪竞技和考验风度的项目。
-古代宴席中“头菜”非最好吃，而是象征性安排，如“鸡头”表示“吉利开头”。
-“请安”不同于现代问好，它有严格顺序、姿态与称呼体系，体现身份与等级。
-古时考试作弊若被发现，会被冠以“作弊欺君”罪名，最重可判“斩首示众”。
-中国古代没有“筷子”一词，最早称为“箸”，“筷”是清代后期的口语演变。
-在道教传统中，正月十五是“太上老君圣诞”，所以庙会活动非常多。
-中国传统节日“寒食节”源自纪念介子推，禁火冷食三日，是清明节前身。
-“八卦”不仅是占卜符号，本义为“八种自然现象的象征组合”，反映天地万物变化。
-传统建筑中“门槛”越高，表示地位越高；也有风水寓意“挡煞、聚气”。
-地球上实际最高的山是夏威夷的冒纳凯亚火山，从海底算起比珠穆朗玛峰还高4000多米。
-中国最东、最西、最南、最北的四个端点中，最东点的太阳先升起，但时区却和北京一致。
-俄罗斯横跨11个时区，是世界上时区最多的国家。
-地球不是完美的球体，而是赤道略鼓、两极稍扁的“椭球体”。
-在地图上看，格陵兰岛和非洲差不多大，其实非洲是它的14倍，是地图投影导致的错觉。
-世界上没有与海洋接壤的国家中面积最大的是哈萨克斯坦。
-埃塞俄比亚拥有自己的日历，比我们常用的公历“落后”约7年。
-赤道附近并不总是最热的地带，部分沙漠如撒哈拉更热，是因气候带和气流影响。
-阿根廷与智利边界的安第斯山，河流流向决定了边界归属，被称为“分水岭原则”。
-“国际日期变更线”并不是直线，而是故意弯曲以避开国家和岛屿群，避免同一天两种日期。
-世界上唯一一个完全位于两大洲交界处的城市是土耳其的伊斯坦布尔（横跨欧亚）。
-撒哈拉曾是绿洲，在几千年前曾有湖泊和鳄鱼化石，是地球气候变迁的证据。
-地球自转并不是恒定的，潮汐、地震、大气活动都会让每天时间轻微波动。
-喜马拉雅山仍在“长高”，每年因印度板块挤压上升约0.5厘米。
-中国领土南北跨度非常大，海南一月可以下海游泳，黑龙江同时可能零下三十度。
-非洲大裂谷是地球表层正在“撕裂”的证据，将来可能会形成一个新海洋。
-有些国家的首都并不在最大城市，比如澳大利亚的首都是堪培拉，不是悉尼或墨尔本。
-加拿大有超过300万个湖泊，占全球淡水湖数量约60%。
-尼泊尔的国旗是唯一不是长方形的国家国旗，由两个三角形组成。
-地球上最干的地方是智利的阿塔卡马沙漠，有的地方几百年未降雨。
-地球上最冷的地方是南极的“东方高原”，曾测得 -89.2°C 的极端低温。
-地球上唯一一个同时拥有五种气候带的国家是中国（寒、温、亚热、热带、青藏高原气候）。
-地球自转并不是恒定的，极端天气、地震甚至火山喷发都能轻微改变地球的自转速度。
-世界上最热的常年居住地是伊朗的卢特沙漠，地表温度曾高达70.7°C。
-沙漠不一定热，南极其实是“最大沙漠”，因为它年降水量极低，属于“极地干旱带”。
-厄尔尼诺现象是太平洋水温异常升高，会导致全球气候大范围紊乱。
-阿尔卑斯山的冰川正以每年数米的速度融化，科学家甚至用毯子给冰川“盖被子”以减缓消融。
-亚马逊雨林被称为“地球之肺”，但它夜间也会释放二氧化碳，因此并不是绝对净吸收。
-北极并不是陆地，而是漂浮的海冰；南极才是真正的冰雪大陆。
-在某些热带雨林，雨水从树冠落到地面需要10分钟以上，因为树冠太密集。
-冰岛冬天其实不特别冷，是因为受墨西哥湾暖流调节，但夏天也并不热。
-沙特阿拉伯几乎没有河流，全国大部分淡水依赖海水淡化工厂。
-在秘鲁海岸线附近，有一种“海雾沙漠”，常年没有雨，但空气湿度极高。
-地球上风速最快的地方之一是南极的某些山谷，可达每小时320公里。
-全球平均海平面每年上升约3.3毫米，远超古代自然变化速率。
-新西兰有一个地方叫“风之谷”，一年中有300多天刮风，是世界上风最多的地方之一。
-“极昼”和“极夜”现象只发生在南北极圈内，最长可达连续六个月白天或黑夜。
-青藏高原被称为“世界第三极”，平均海拔超过4000米，是亚洲多条大河的发源地。
-有些火山终年被冰雪覆盖，却仍处于活跃状态，如意大利的埃特纳火山。
-天文潮、风暴潮和地震海啸都是“海水暴涨”的原因，但机制完全不同。
-莎士比亚一生发明了1700多个英文单词，比如“lonely”和“fashion”。
-《罗密欧与朱丽叶》里两人认识到死亡，其实只用了不到三天时间。
-鲁迅一生其实写过很多爱情诗，只是被杂文的名声盖住了。
-《红楼梦》并没有真正写完，后40回是否为曹雪芹所写至今仍有争议。
-海明威靠写“极短句”出名，但他早年其实模仿的是复杂长句风格。
-《哈利·波特》最初被12家出版社拒绝，后来才被一家小出版社接收。
-村上春树是听一场棒球比赛时突然决定写小说的。
-托尔斯泰晚年极度厌恶自己写的《战争与和平》，觉得那是“没用的东西”。
-《1984》的作者乔治·奥威尔晚年身体极差，是在病床上完成写作的。
-金庸在连载小说时，经常根据读者反馈“临时改剧情”。
-莫扎特写《小星星变奏曲》时，其实是拿一首法国童谣来“玩花样”。
-贝多芬在几乎完全失聪的情况下写出了《第九交响曲》。
-巴赫一生几乎没有“成名”，死后几十年才被重新发现。
-肖邦几乎只为钢琴写作，很少涉及其他乐器。
-李斯特是历史上最早的“音乐偶像”，曾引发类似追星的“李斯特狂热”。
-柴可夫斯基写《天鹅湖》时并不成功，反而是后来才成为经典。
-约翰·列侬曾说披头士“比耶稣还出名”，结果引发巨大争议。
-迈克尔·杰克逊的“太空步”其实并不是他发明的，但他把它推向了巅峰。
-周杰伦早期投稿给唱片公司是被拒绝的，后来是被当“词曲作者”签下才出道。
-很多经典摇滚歌曲的demo版本，其实比正式版本更受乐迷推崇。
-古代诗人很多都是“公务员”，写诗是副业，比如杜甫、白居易。
-李白一生仕途不顺，但在当时已经是“顶流网红诗人”。
-苏轼不仅会写词，还会做菜，“东坡肉”就是他的“作品”。
-《诗经》很多内容其实是“民歌合集”，相当于古代的流行音乐榜单。
-唐诗中大量“送别诗”，是因为古代交通不便，一别可能就是一生。
-古人写诗常用“酒”来表达情绪，但很多人其实酒量很一般。
-曹操不仅是政治家，还是“建安文学”的代表人物之一。
-很多古诗中提到的“月亮”，其实是用来表达思乡，而不是单纯写景。
-“才子佳人”题材在明清小说中泛滥，相当于古代的“偶像剧套路”。
-《西游记》原著比电视剧“黑暗得多”，很多情节带有讽刺意味。
-音乐里的“副歌更洗脑”是因为重复结构更容易让大脑记住。
-很多流行歌的“高潮提前出现”，是现代音乐制作刻意优化的结果。
-古典音乐中“交响乐”原本是给贵族听的，不是大众娱乐。
-中国古代“雅乐”是宫廷音乐，而“俗乐”才是老百姓听的流行音乐。
-流行音乐里的“Auto-Tune”最早不是用来修音，而是地质勘探算法改造的。
-很多歌手现场唱不如录音，是因为录音可以多轨叠加和后期修正。
-音乐节现场“气氛炸裂”，很大一部分来自音量、灯光和人群共振。
-有些歌曲你觉得“在哪听过”，是因为使用了常见和弦进行（比如4536251）。
-卡夫卡一生几乎没有发表成功作品，还交代朋友把手稿全部烧掉，结果朋友没听。
-《变形记》里的“甲虫”，卡夫卡明确要求不要画出来，但后来几乎所有版本都画了。
-陀思妥耶夫斯基曾因欠债被逼着在极短时间内写完小说，还靠速记员口述完成。
-狄更斯写小说是“连载制”，常根据读者反应临时改剧情，相当于边写边播。
-简·奥斯汀的小说最初是匿名出版的，封面只写“By a Lady”。
-博尔赫斯晚年失明，却成为“图书馆馆长”，完全靠记忆工作。
-鲁迅的“鲁迅”只是笔名之一，他用过上百个笔名写作。
-《三体》在国内最初并不火，是在国外获奖后才彻底出圈。
-《福尔摩斯》作者柯南·道尔曾试图“写死”福尔摩斯，因为他更想写历史小说。
-莫扎特不仅是神童，还很爱讲低俗笑话，写过“脏话歌曲”。
-贝多芬脾气极差，换过几十个住处，因为总是和邻居吵架。
-巴赫一生有20个孩子，其中好几个也成为音乐家。
-肖邦非常讨厌在大场合演出，更喜欢在小沙龙里弹琴。
-德彪西不喜欢别人叫他“印象派作曲家”，但后世一直这么叫。
-帕格尼尼演奏太神，被当时很多人怀疑“和魔鬼做交易”。
-猫王（Elvis）其实不会自己写歌，但他的演绎能力极强。
-披头士后期音乐风格大变，是因为开始接触印度音乐和迷幻文化。
-鲍勃·迪伦获得诺贝尔文学奖时，一度“消失不回应”，引发争议。
-很多古典音乐家其实兼职“宫廷打工人”，写音乐是工作不是理想。
-杜甫写过大量“穷困潦倒日记”，很多诗就是现实吐槽。
-白居易写诗追求“让老百姓听得懂”，甚至会念给老太太听来测试。
-《水浒传》中的很多人物原型，来自真实的民间反抗者。
-古代“才子佳人”小说很多其实是“男性幻想文学”。
-《金瓶梅》在文学史上评价很高，但长期被当作禁书。
-很多流行歌的“副歌洗脑”，是因为重复频率正好卡在大脑记忆强化区间。
-梵高一生只卖出过一幅画，而且还是卖给了朋友的妹妹。
-梵高割耳朵并不是“突然发疯”，很可能是和高更吵架后的极端行为。
-达芬奇不仅是画家，还设计过飞行器、坦克，甚至潜水装置。
-《蒙娜丽莎》之所以神秘，是因为达芬奇用了“晕涂法”（sfumato），让轮廓模糊。
-《最后的晚餐》之所以破损严重，是因为达芬奇没用传统湿壁画技法。
-米开朗基罗其实更认同自己是雕塑家，而不是画家。
-拉斐尔去世时只有37岁，却已经成为“完美艺术”的代表。
-毕加索一生创作超过5万件作品，效率极其恐怖。
-毕加索的名字非常长，完整版本有20多个单词。
-莫奈画《睡莲》系列时，已经患有严重白内障，看到的颜色都偏黄。
-印象派最初是被嘲笑的名字，来源于一位评论家讽刺莫奈的画“只是印象”。
-达利（超现实主义）曾带着一只食蚁兽逛街，是艺术行为也是个人标签。
-达利还设计过“龙虾电话”，把电话听筒做成龙虾形状。
-马蒂斯晚年身体不好，开始用“剪纸”创作，反而开创了新风格。
-伦勃朗晚年破产，作品也不再被当时主流接受。
-《呐喊》的作者蒙克一生精神状态不稳定，这幅画也被解读为焦虑象征。
-很多博物馆里的“名画”，其实修复过很多次，并不是最初状态。
-油画之所以能保存几百年，是因为颜料和油脂形成稳定结构。
-中国古代画家很多“不画脸”，因为讲究“意境重于写实”。
-齐白石年轻时是木匠，后来才转行画画。
-张大千曾临摹敦煌壁画到“真假难辨”的程度。
-徐悲鸿画马出名，是因为他长期观察真实马的骨骼结构。
-中国山水画很多不是“写实”，而是“多视角拼接”的理想景观。
-古代画卷是“边看边展开”，类似今天的横向叙事电影。
-文人画强调“气韵”，不追求像不像，而是“有没有味道”。
-有些画作“看不懂”，是因为属于观念艺术，重点在“想法”而不是画面。
-油画怕光、怕湿、怕温差，是非常“娇气”的艺术形式。
-有些画被盗后反而更出名，比如《蒙娜丽莎》曾被偷过。
-拍卖行会刻意制造“竞争氛围”来抬高艺术品价格。
-古罗马人曾用尿液洗衣服，因为尿中的氨可以分解污渍，甚至形成了一种“尿税”。
-中世纪欧洲人很少洗澡，不只是懒，而是曾一度认为洗澡会“打开毛孔引入疾病”。
-拿破仑其实并不矮，他身高约1米68，在当时法国人中属于正常甚至略高。
-维京人并没有戴牛角头盔，这个形象是19世纪歌剧舞台设计的产物。
-古埃及人会用发酵面团或蜂蜜做早期的“避孕方法”。
-秦始皇陵中水银含量异常高，可能模拟了“江河湖海”的地理结构。
-古代中国的“纸钱”最初不是烧给死人的，而是现实货币的替代品。
-宋朝的夜生活非常发达，甚至有“夜市通宵营业”，远超同时期欧洲城市。
-中世纪欧洲的猫曾被大量屠杀，因为被认为和女巫有关，结果间接加剧了黑死病传播（鼠患失控）。
-古希腊人认为蓝色并不存在，他们用“深色”来描述海洋，因为语言中缺乏明确“蓝色”词汇。
-日本战国时期的武士有时会带“替身人偶”，在远处迷惑敌人。
-奥斯曼帝国曾用“聋哑人”作为宫廷执行者，避免他们泄露机密。
-中国古代有“更夫”，不仅报时，还承担巡逻和防火职责。
-明朝时已经出现“快递系统”，叫“驿站传递”，可以快速送信和文件。
-古罗马斗兽场有时会“注水”，进行模拟海战（naumachia）。
-蒙古帝国时期的“通行牌”（牌子）相当于通行证，可以一路免费吃住。
-古印度有“外科手术传统”，甚至能进行鼻子重建手术。
-中世纪欧洲贵族吃饭常用手抓，叉子是后来才普及的。
-清朝科举考试时间长达数天，考生要在小格子里吃住写作。
-古代波斯帝国有“皇家邮路”，信件传递速度在当时非常惊人。
-罗马皇帝卡利古拉曾打算让自己的马当执政官（虽然可能是政治讽刺）。
-英国历史上有“啤酒当工资”的时期，工人部分收入以啤酒支付。
-古代中国有“宵禁制度”，晚上出门需要通行证，否则可能被抓。
-维多利亚时代的人会和死去的亲人合影，这是“纪念照”文化。
-古代日本女性曾剃眉、染黑牙齿作为美的标准。
-古埃及法老的胡子很多是“假胡子”，象征权力。
-古代欧洲的“医生”有时同时也是理发师，因为他们负责放血治疗。
-宋朝已经有“火药武器”，但主要用于信号和初级军事用途。
-玛雅文明的球赛失败者有时会被献祭（具体规则仍有争议）。
-古代中国“诛九族”理论上包括亲属和姻亲，是极端连坐制度。
-历史上的“黑暗时代”并不完全黑暗，只是资料较少导致印象偏差。
-很多“伟大帝国”寿命其实很短，比如亚历山大帝国只存在十几年。
-互联网最初的设计目标之一是：即使核战争也能继续通信（分布式网络结构）。
-你现在用的电脑算力，已经远超当年把人送上月球的计算机数百万倍。
-早期计算机程序是用“穿孔卡片”输入的，一叠卡片就是一个程序。
-“Bug（程序错误）”这个词，真的来自一只卡在计算机里的飞蛾。
-GPS之所以精准，是因为它必须考虑相对论效应（时间会因速度和引力变化）。
-键盘“QWERTY”布局并不是最高效，而是为了防止早期打字机卡键。
-二维码的黑白块并不是随机的，其中有专门的定位图案和纠错编码。
-WiFi其实不是缩写（不像Hi-Fi），只是一个商业命名。
-现代CPU并不是一直在算，而是在疯狂“预测你下一步要做什么”。
-你手机里的“随机数”，很多其实并不随机，而是“伪随机算法”。
-早期电脑的“内存”曾经用的是水银延迟线（声音在液体中传播来存数据）。
-第一块硬盘（IBM 1956）重达一吨，只能存5MB数据。
-USB接口设计成“正反插不进去”，其实是为了耐用性而不是折磨用户。
-电脑风扇噪音有时不是风声，而是空气共振频率。
-屏幕刷新率越高，人脑越难察觉“卡顿”，但能明显感知“流畅”。
-AI训练时最耗资源的不是计算，而是数据清洗。
-有些加密算法不是“算不出来”，而是算到宇宙灭亡都算不完。
-电脑里的“桌面”概念，来自现实办公桌的隐喻设计。
-最早的“黑客”其实是指喜欢拆东西研究的人，不是攻击者。
-很多软件里的“保存图标”，其实是软盘，但很多人从没见过实物。
-早期《俄罗斯方块》在苏联开发，版权问题曾引发全球争夺战。
-《GTA》系列里的城市，通常是现实城市的“压缩版重构”。
-《塞尔达》很多谜题设计思路来源于现实中的“玩具体验”。
-《Minecraft》最初只是一个业余项目，作者Notch甚至没打算长期维护。
-游戏里的NPC路径（走路路线）通常是提前计算好的，而不是实时思考。
-很多游戏敌人“突然变强”，其实是“动态难度调整系统”在作祟。
-你觉得游戏“读心”，往往是因为AI读取了你的输入模式。
-很多“开放世界”，其实是用加载区域拼接出来的，而不是真正无缝。
-游戏角色“脚步声”，很多是录音师用别的东西模拟的（比如踩沙子+碎纸）。
-FPS游戏的“后坐力”，很多是视觉效果，不是真实物理。
-游戏里的“视野（FOV）”，会直接影响你对速度和距离的判断。
-游戏里的“镜子”，很多根本不是真镜子，而是另一套渲染画面。
-角色“碰撞体积”通常比模型小，防止卡墙（也就是你打不到边缘）。
-很多游戏的“音效延迟”，是刻意设计来增强打击感。
-有些游戏“看起来不卡”，是因为偷偷降低了分辨率（动态分辨率）。
-你觉得“操作手感好”，往往来自输入延迟优化，而不是画面质量。
-OK：来自19世纪美国俚语“oll korrect”（故意拼错的all correct）。
-SOS：不是“Save Our Souls”，而是摩尔斯电码中最简单的求救信号（··· --- ···）。
-OMG：早在1917年的书信中就已出现，比互联网早一百年。
-LOL：最初用于聊天室快速表达反应，而不是单纯表示“笑”。
-ASAP：源于军用和商业通信，表示最高优先级的“尽快处理”。
-DIY：二战后在英国流行，鼓励民众自行修理房屋和物品。
-VIP：来自外交体系，指“需要特殊接待的人”。
-RIP：来自拉丁文“Requiescat in pace”（愿其安息）。
-PS：来自拉丁文“post scriptum”（正文后的补充）。
-AM / PM：来自拉丁文，分别表示中午前和中午后。
-FPS：既指Frames Per Second（帧率），也指First-Person Shooter（第一人称射击）。
-NPC：Non-Player Character，非玩家角色。
-RPG：Role-Playing Game，角色扮演游戏。
-MMO：Massively Multiplayer Online，大型多人在线。
-AFK：Away From Keyboard，暂时离开。
-GG：Good Game，后来常表示“结束了”。
-OP：Overpowered（过强）或Original Poster（原帖作者）。
-HP / MP：Health Points / Magic Points，源自早期RPG系统。
-EXP：Experience Points，经验值。
-DPS：Damage Per Second，每秒伤害。
-Break a leg：祝你好运（常用于演出前，反话表达）
-Hit the sack：去睡觉
-Piece of cake：非常简单
-Under the weather：身体不舒服
-Spill the beans：说漏嘴 / 泄密
-Cost an arm and a leg：非常昂贵
-Hang out：闲逛 / 一起消磨时间
-Call it a day：收工 / 到此为止
-Cut corners：偷工减料 / 走捷径
-Bite the bullet：硬着头皮去做
-On the same page：意见一致
-Pull someone’s leg：开玩笑捉弄别人
-The ball is in your court：轮到你决定了
-Hit the books：用功学习
-Burn the midnight oil：熬夜工作或学习
-Break the ice：打破尴尬气氛
-Let the cat out of the bag：不小心泄露秘密
-In hot water：陷入麻烦
-Keep an eye on：留意 / 照看
-Go the extra mile：额外努力
-Take it easy：放轻松 / 别紧张
-Get cold feet：临阵退缩
-Blow off steam：发泄情绪
-Think outside the box：跳出框架思考
-Back to square one：回到起点
-Pull yourself together：振作起来
-Lose your touch：手感变差 / 状态不在
-Miss the point：没抓住重点
-Jump to conclusions：草率下结论
-Under the table：私下 / 非正式（常指非法）
-Beat around the bush：拐弯抹角
-Cut to the chase：直入主题
-Go with the flow：随遇而安
-In the long run：从长远来看
-By the book：按规矩来
-Off the hook：摆脱麻烦
-On edge：紧张不安
-Out of the blue：突然发生
-Play it by ear：随机应变
-Run out of steam：失去动力
-Sit tight：耐心等待
-Take a rain check：改天再约
-Up in the air：尚未确定
-Wrap it up：收尾 / 结束
-Zip your lip：闭嘴
-Dig in：开吃 / 开始认真做事
-Hold your horses：别急
-Kick the bucket：去世（俚语）
-Let it slide：放一马 / 不计较
-Make ends meet：收支平衡
-No big deal：没什么大不了
-On the fence：犹豫不决
-Pull the plug：终止 / 停止
-Speak of the devil：说曹操曹操到
-Stick to your guns：坚持立场
-Take a toll：造成损失 / 消耗
-Throw in the towel：认输
-Under your nose：就在眼皮底下
-Walk on eggshells：小心翼翼
-You bet：当然 / 没问题
-Ace it：表现得非常出色 / 轻松搞定
-All set：一切准备就绪
-Back someone up：支持某人 / 证实某人说法
-Blow it：搞砸了
-Bring it on：放马过来
-Call it quits：收手 / 不干了
-Come in handy：派上用场
-Drop the ball：犯错 / 失误
-Easy does it：慢慢来
-Face the music：面对后果
-Get the hang of it：掌握窍门
-Give it a shot：试试看
-Go big or go home：要么全力以赴要么放弃
-Hit the nail on the head：一针见血
-In no time：很快
-Keep it up：继续保持
-Make a long story short：长话短说
-Not a chance：不可能
-On the house：免费（商家提供）
-Pick up the slack：补位 / 弥补不足
-Put it off：推迟
-Rule of thumb：经验法则
-See eye to eye：看法一致
-Take a hint：领会暗示
-That rings a bell：听起来很熟
-Throw shade：暗讽 / 阴阳怪气
-Turn a blind eye：视而不见
-Up to you：由你决定
-Wear someone out：把人累坏
-Work like a charm：效果很好
-All ears：洗耳恭听
-At the end of the day：归根结底
-Be my guest：请便 / 不用客气
-Big deal：有什么了不起（反讽）
-By all means：当然可以
-Catch up：赶上进度 / 叙旧
-Come clean：坦白交代
-Down to earth：务实 / 接地气
-For real：真的？/ 不是吧
-Get over it：别再纠结了
-Give me a break：饶了我吧 / 少来这套
-Hang in there：再坚持一下
-I’m broke：我没钱了
-It’s on me：我请客
-Keep me posted：随时告诉我进展
-Make yourself at home：别拘束
-My bad：我的错
-No way：不可能 / 真的假的
-Out of line：过分了
-Play it safe：稳妥行事
-Put yourself in my shoes：换位思考
-So far so good：目前一切顺利
-That’s the last straw：忍无可忍了
-This is it：就这样了 / 关键时刻
-Time flies：时间过得很快
-What’s up：最近怎么样
-You nailed it：你说对了 / 做得很好
-You’re kidding：你在开玩笑吧
-Zero in on：集中注意力在
-Chill out：冷静点 / 放轻松
-Back off：别管了 / 退开
-Ballpark figure：大致估计
-Bang for your buck：性价比高
-Be in over your head：力不从心
-Blow someone away：让人惊艳 / 大吃一惊
-Break even：收支平衡
-Call the shots：掌控局面
-Come across：给人留下某种印象
-Cut someone some slack：对某人宽容一点
-Do the trick：起作用
-Drag your feet：拖拖拉拉
-Drop by：顺便拜访
-Fall through：落空 / 没成
-Get a grip：振作点 / 控制情绪
-Give someone a hand：帮忙
-Go all out：全力以赴
-Go down in history：载入史册
-Hang up：挂电话
-In a nutshell：简而言之
-Jump on the bandwagon：跟风
-Keep your cool：保持冷静
-Lay low：低调行事 / 躲起来
-Make a scene：大吵大闹
-No strings attached：无附加条件
-Play hardball：强硬对待
-Pull your weight：尽自己本分
-Run into：偶遇
-Set the record straight：澄清事实
-Take it or leave it：爱要不要
-Think twice：三思而后行
-A long shot：希望渺茫
-Ahead of the curve：领先趋势
-All over the place：乱七八糟 / 杂乱无章
-At your own risk：风险自负
-Bend over backwards：竭尽全力
-Between a rock and a hard place：进退两难
-Burn bridges：断绝后路
-Call it a night：收工 / 睡觉去
-Catch someone off guard：让人措手不及
-Cut it out：住手 / 别闹了
-Down the road：将来 / 以后
-Face value：表面意思
-For the record：正式说明一下
-Get carried away：太投入 / 过头了
-Give it a rest：别再说了
-Go off the rails：失控
-In the same boat：处境相同
-Keep it real：保持真实 / 别装
-Knock it off：停下
-Lose it：情绪失控 / 崩溃
-Make it up：编造 / 和好
-No sweat：小事一桩
-On the spot：当场 / 立刻
-Over the top：夸张过头
-Play dumb：装傻
-Put your foot down：坚决表态
-Read between the lines：读出言外之意
-Take the heat：承担责任 / 挨批
-Under pressure：压力之下
-Wrap your head around：理解 / 想明白
-Act your age：别幼稚 / 做点符合年龄的事
-Add fuel to the fire：火上浇油
-All talk：光说不做
-Back to back：接连发生 / 连续进行
-Bad blood：积怨 / 过节
-Be on your case：一直盯着你 / 催你
-Bend the rules：变通规则 / 打擦边球
-Bring up：提起 / 抚养
-Brush it off：不当回事
-By heart：熟记 / 背下来
-Catch a break：走运 / 得到机会
-Come to terms with：接受现实
-Count on：指望 / 依赖
-Cut someone off：打断 / 断绝联系
-Do someone dirty：坑别人 / 背刺
-Draw the line：划清界限
-Drop everything：放下一切立刻去做
-Eat your words：打脸 / 收回前言
-Fall apart：崩溃 / 散架
-Figure out：搞明白
-Get away with：做坏事没被惩罚
-Give someone a hard time：刁难别人
-Go out of your way：特意去做
-Hang on：等一下 / 别挂电话
-Have a blast：玩得很开心
-Hit the road：出发 / 上路
-Hold a grudge：记仇
-In charge：负责 / 掌控
-Keep in touch：保持联系
-Make it happen：促成 / 实现
-Go the distance：坚持到底
-Hit a snag：遇到小问题
-In the loop：知情 / 在圈内
-Lay it on thick：夸大其词
-Make waves：制造影响 / 引起风波
-On the dot：准时
-Pull yourself up by your bootstraps：自力更生
-Run the show：掌控全局
-Shoot your shot：大胆尝试
-Sit on it：先别处理 / 再等等
-Smooth things over：缓和局面
-Step up：挺身而出
-Take a step back：退一步看问题
-Take it personally：往心里去
-The sky’s the limit：没有上限
-Throw your weight around：仗势欺人
-Turn things around：扭转局面
-Up in arms：群情激愤
-Walk it off：忍一忍就过去了
-Watch your step：小心点
-Wear your heart on your sleeve：情绪外露
-Win someone over：赢得支持
-Work your way up：一步步往上爬
-You’re all set：你已经准备好了
-Zip through：很快完成
-All thumbs：笨手笨脚
-At odds：不和 / 有分歧
-Back on track：回到正轨
-Bail on：临时放鸽子
-Beat me：我也不知道
-Bite off more than you can chew：贪多嚼不烂
-Blow up：爆红 / 爆炸 / 发脾气
-Break even：不赚不亏
-Bring down：拉低 / 打击
-Brush up on：复习 / 提升技能
-Call it even：扯平
-Come through：兑现承诺 / 成功做到
-Creep up on：悄悄逼近
-Do a double take：多看一眼（因为惊讶）
-Drive someone nuts：把人逼疯
-Drop off：下降 / 顺便送人
-Eat up：吃光 / 很喜欢
-End up：最终变成
-Feel under the weather：有点不舒服
-Fill in：代班 / 补充信息
-Get ahead：取得进展
-Get by：勉强过活 / 应付
-Give away：泄露 / 赠送
-Go downhill：走下坡路
-Hold back：忍住 / 阻止
-Keep up：跟上进度
-Knock out：击倒 / 累坏
-Look into：调查
-Make do：将就用
-Pass out：昏倒 / 分发
+Bees can recognize human faces. Tiny brains, impressive memory.
+Starfish explore their surroundings without a brain.
+Octopuses have three hearts: two for their gills, one for their body.
+Babies have more bones than adults. Some fuse as they grow.
+Every zebra wears a unique stripe pattern, like a fingerprint.
+Kangaroos can't hop backward.
+The Sun holds 99.86% of the solar system's mass.
+Bananas are naturally radioactive, thanks to potassium-40.
+Male seahorses carry the babies.
+A cat's heart beats roughly 140–220 times per minute.
+Whale songs can travel hundreds of kilometers underwater.
+Flamingos get their pink color from their food.
+Saturn's rings are made of countless icy particles.
+Lithium is the lightest metal, light enough to float on water.
+Cats use their whiskers to judge tight spaces in the dark.
+An elephant's pregnancy lasts about 22 months.
+Bats are the only mammals capable of sustained powered flight.
+Goldfish can remember things for months. Forget the three-second myth.
+Horses can sleep standing up.
+Some ants link their bodies into floating rafts.
+Dolphins identify one another with distinctive signature whistles.
+Octopuses have blue, copper-based blood.
+Trees release scents that attract or repel insects.
+Cats can swivel their ears toward sounds.
+Astronauts grow taller in space as their spines decompress.
+The Moon drifts about 3.8 centimeters farther from Earth each year.
+Squirrels' front teeth never stop growing.
+Hummingbirds can fly backward.
+Wombats poop cubes, handy for keeping territory markers from rolling away.
+Crocodiles can't stick out their tongues.
+Antarctica is Earth's largest desert. Deserts are defined by dryness, not heat.
+Rainbows are full circles. The ground usually hides the rest.
+Polar bears have black skin beneath fur that looks white.
+Lightning can be about five times hotter than the Sun's surface.
+Tardigrades can survive vacuum, intense radiation, and extreme cold.
+Earth's inner core is almost as hot as the Sun's surface.
+Some deep-sea fish make their own light.
+Ginkgo trees belong to a lineage more than 200 million years old.
+A flying hummingbird's heart can beat 1,200 times per minute.
+Butterflies taste with their feet.
+Earth's magnetic poles have reversed repeatedly throughout its history.
+Earth's rotation is gradually slowing, stretching our days over geological time.
+Volcanoes can produce lightning during eruptions.
+On Venus, the Sun rises in the west.
+Vampire squid mainly eat organic debris. Their name is scarier than their diet.
+Your brain contains about 86 billion neurons.
+Your buttocks help stabilize you while running.
+Your heart may beat roughly three billion times in a lifetime.
+Your brain uses about 20% of your body's energy.
+Tears contain enzymes that fight bacteria.
+Earwax helps protect your ears from dust and bacteria.
+Tooth enamel is the hardest tissue in your body.
+Babies' kneecaps start as cartilage and gradually become bone.
+Blood in your veins is red, even when the veins look blue.
+You're usually taller in the morning. Your spine compresses during the day.
+Stainless steel can rust; it simply resists corrosion better than ordinary steel.
+Tomatoes are fruits to botanists and vegetables to cooks.
+Coffee beans are seeds hiding inside fruit.
+Chip bags contain nitrogen to keep snacks fresh and cushion them.
+Yawns are contagious. Sometimes even reading about one does the trick.
+Honey can stay edible for an extraordinarily long time when properly stored.
+That earthy smell after rain comes partly from compounds made by soil microbes.
+Most airplane meals are cooked on the ground and reheated in flight.
+For some people, cilantro tastes like soap because of their genes.
+Instant noodles stay shelf-stable largely because they're dried.
+Tiles feel cold because they pull heat from your feet quickly.
+Some supermarkets use slow music to encourage leisurely browsing.
+Many banknotes are made from cotton fibers or polymer rather than ordinary paper.
+Apple slices turn brown when compounds in their flesh react with oxygen.
+Ultrasonic cleaners use collapsing bubbles to loosen dirt.
+White hotel sheets make stains easier to spot.
+Hammering an elevator button won't make the elevator arrive faster.
+Runway "09" points approximately east: its number represents a 90-degree magnetic heading.
+The number on a plastic bottle identifies its material, not its reuse limit.
+Wine tannins bind to proteins in your mouth, creating that dry, puckering feeling.
+You see lightning before hearing thunder because light travels faster than sound.
+Coffee temporarily blocks fatigue signals; it doesn't refill an energy tank.
+Nail clipping is painless because the part you cut has no nerves.
+Bananas are botanical berries. Strawberries aren't.
+Skyscrapers are designed to sway slightly in wind.
+Lightning can strike the same place repeatedly. Tall towers are favorite targets.
+Glaciers move, just very slowly.
+Your brain fills in your eyes' blind spots automatically.
+French "quatre-vingts" means "four twenties": that's 80.
+Italian "ciao" means both hello and goodbye.
+Finnish "kalsarikännit" means getting drunk at home in your underwear.
+"Goodbye" began as "God be with ye."
+"Robot" comes from a Czech word associated with forced labor.
+Some communities communicate across distances by whistling.
+"Window" comes from an Old Norse word meaning "wind eye."
+German gives every noun a capital letter.
+Double negatives strengthen statements in many languages.
+Finnish can describe the future using present-tense verbs and context.
+Hamburgers take their name from Hamburg, Germany.
+Words for "mother" often resemble "ma," a sound babies can make easily.
+Esperanto was invented, yet some children grow up speaking it natively.
+"Wife" comes from an Old English word meaning "woman."
+Swedish "gift" can mean "married" or "poison." Make of that what you will.
+"Hello" started as a way to call out or attract attention.
+Portuguese "saudade" blends longing, sadness, and sweetness into one word.
+"Alphabet" combines alpha and beta, the first two Greek letters.
+"Friend" became a verb: "I friended her on Facebook."
+"Sheriff" comes from "shire reeve," an official who oversaw a county.
+"Muscle" comes from Latin for "little mouse," inspired by movement beneath the skin.
+"Awful" once meant full of awe.
+English always capitalizes the pronoun "I."
+The silent "k" in "knight" used to be pronounced.
+"Orange" named the fruit before it named the color.
+"Nice" once meant foolish.
+In Shakespeare's time, "thou" was familiar; "you" could show respect.
+"Pineapple" originally referred to a pine cone.
+"Cleave" can mean split apart or cling together.
+"Let" can mean allow or, in older usage, hinder.
+Ancient Olympic athletes competed naked.
+Some communities in Madagascar dance with their ancestors' remains during remembrance ceremonies.
+British afternoon tea began as a way to bridge the gap before dinner.
+Argentinians often don't sit down to dinner until after 9 p.m.
+In Finland, saunas are part of everyday social life.
+Mexico's Day of the Dead remembers loved ones with festive colors, sugar skulls, and celebrations.
+Ethiopia's calendar has 13 months.
+Icelandic phone directories traditionally list people by given name.
+Spain welcomes the new year with 12 grapes, one for each midnight chime.
+In Māori culture, the hongi greeting shares the breath of life through touching noses.
+In American folklore, the Tooth Fairy trades lost teeth for money.
+In Argentina, a little mouse collects children's lost teeth.
+Britain's milk-first-or-tea-first debate has outlasted countless cups of tea.
+Moroccan tea pouring can become a performance, with the pot held high above the glass.
+Oktoberfest's large beer mugs hold a full liter.
+Mauna Kea is taller than Everest when measured from its underwater base.
+China's far east sees sunrise before Beijing but follows the same official time.
+Earth bulges at the equator and flattens slightly at the poles.
+Africa is about 14 times larger than Greenland, despite what some maps suggest.
+Kazakhstan is the world's largest landlocked country.
+The International Date Line bends around countries and islands.
+Istanbul stretches across Europe and Asia.
+The Sahara once had lakes and much greener landscapes.
+Tides, earthquakes, and atmospheric changes can slightly alter Earth's rotation.
+The Himalayas are still rising as tectonic plates collide.
+Africa's Great Rift Valley could eventually become a new ocean.
+Australia's capital is Canberra, not Sydney or Melbourne.
+The Atacama Desert is among Earth's driest places.
+El Niño begins with unusually warm waters in the tropical Pacific.
+Some Alpine glaciers get protective blankets to slow summer melting.
+The North Pole sits on sea ice; the South Pole sits on a continent.
+Some Peruvian coastal deserts receive little rain but plenty of fog.
+Near the poles, daylight or darkness can last for months.
+The Tibetan Plateau is called the Third Pole and feeds several major Asian rivers.
+An icy summit doesn't mean a volcano has stopped erupting.
+0.999… equals exactly 1. Infinite nines leave no gap.
+Just 23 people give over 50% odds of a shared birthday, assuming uniform birthdays and no leap days.
+Gaps between consecutive prime numbers can be as long as you like.
+Four colors suffice for flat maps with connected regions; neighbors sharing a border get different colors.
+Cut a Möbius strip down its middle: you get one longer loop.
+On a sphere, a triangle can have three right angles.
+Multiply 142857 by 2, 3, 4, 5, or 6: the same digits rotate.
+Every nonnegative whole number is a sum of four whole-number squares, allowing zeros.
+A shape can have finite area and infinite perimeter. The Koch snowflake does.
+Gabriel's horn has finite volume but infinite surface area.
+Square-wheeled bicycles can ride smoothly over specially shaped bumps.
+Among six people, three must be mutual acquaintances or mutual strangers.
+Remove diagonally opposite corners from a chessboard: dominoes can never tile the remaining squares.
+Eight perfect shuffles restore a 52-card deck's order when halves interlace evenly and the top card stays put.
+One continuous mathematical curve can pass through every point in a square.
+Some infinities are larger than others: real numbers outnumber integers.
+For every convex polyhedron, vertices minus edges plus faces equals two.
+Raise a rope one meter above a spherical Earth's equator: you need only about 6.28 extra meters.
+Four carefully placed straight cuts can divide a pizza into 11 pieces.
+Add consecutive odd numbers starting at 1, and every running total is a perfect square.
+Python's name comes from Monty Python's Flying Circus.
+The world's first webcam watched a coffee pot, saving researchers disappointing trips.
+The error code 418 says "I'm a teapot." It began in an April Fools' coffee protocol.
+The world's first website explained the World Wide Web itself.
+Bluetooth takes its name from King Harald Bluetooth, a medieval ruler who united kingdoms.
+Python can add 0.1 three times and still miss exactly 0.3. Binary storage introduces tiny rounding errors.
+Engineers taped a real moth into a computer logbook in 1947.
+In ASCII, changing a letter's case flips just one bit.
+Binary search can find a target among a billion sorted items in about 30 steps.
+Computer-generated "random" numbers can be completely deterministic. The same seed can recreate the same sequence.
+Sunlight takes about eight minutes to reach Earth. You're seeing the Sun's past.
+Sunlight can push spacecraft. Solar sails turn photons' tiny nudges into propulsion.
+Trillions of solar neutrinos pass through your body every second. You never feel the cosmic traffic.
+A clock at your head ticks slightly faster than one at your feet. Gravity bends time.
+Helium won't freeze at ordinary pressure, even when cooled almost to absolute zero.
+Particles can outrun light in water, creating a blue glow called Cherenkov radiation.
+A Foucault pendulum reveals Earth's rotation while swinging back and forth.
+Sound cannot cross a vacuum. Space battles would lose their dramatic rumbling.
+Water boils cooler high in the mountains, so boiling an egg can take longer.
+A soap bubble's shifting colors come from light waves interfering inside its thin film.
+Cut a bar magnet in half: each piece still has a north and south pole.
+On the Moon, an Apollo astronaut dropped a hammer and feather together. They landed together.
+Venus spins so slowly that one rotation takes longer than its entire trip around the Sun.
+Mercury keeps water ice in permanently shadowed polar craters, despite being the closest planet to the Sun.
+Mars has blue sunsets. Fine dust gives the sky near the setting Sun its cool tint.
+Uranus rotates almost on its side, with an axis tilted about 98 degrees.
+Saturn's average density is lower than water's. The planet is lighter than its size suggests.
+Titan has lakes of liquid methane and ethane. Its weather runs on hydrocarbons.
+Pluto has towering mountains made of water ice. There, frozen water behaves like rock.
+A sugar cube's volume of neutron-star matter packs roughly a billion tons of mass.
+Space station astronauts can see about 16 sunrises and 16 sunsets in one Earth day.
+The Moon's far side gets sunlight too. Its nickname, the dark side, is misleading.
+The Sun emits white light. Earth's atmosphere can paint it orange at sunset.
+Europa's hidden ocean may contain twice as much water as all Earth's oceans combined.
+Black holes can bend light enough to reveal the far side of their surrounding disks.
+Toy Story was the first entirely computer-animated feature film.
+Psycho's shower-scene blood was chocolate syrup. Black-and-white horror has a sweet side.
+The Godfather's cat was a stray Coppola found on the studio lot.
+Inception's hallway fight used a real rotating set; Joseph Gordon-Levitt performed inside it.
+The Grand Budapest Hotel changes its screen shape to signal different eras.
+Peter Sellers plays three characters in Dr. Strangelove, including the president and the title character.
+Casablanca's "As Time Goes By" predates the movie by eleven years.
+Beauty and the Beast became the first fully animated Best Picture nominee.
+Lord of the Rings made hobbits look small using forced perspective.
+1917 hides cuts to mimic continuous action. Its apparent single shot is a carefully stitched illusion.
+Norman's puppet sneakers in ParaNorman were made from antique Victorian leather gloves.
+Dorothy's slippers were silver in the book. The Wizard of Oz turned them ruby red for Technicolor.
+Mary Poppins' "A Spoonful of Sugar" was inspired by a polio vaccine given on a sugar cube.
+Star Wars' blaster shots include the twang of struck metal cables.
+Chewbacca's voice blends bears, badgers, and walruses.
+Metropolis regained 27 missing minutes after footage surfaced in Buenos Aires in 2008.
+Nosferatu (1922) survived a court order to destroy every copy.
+2001: A Space Odyssey used a giant rotating set to film astronauts jogging.
+Back to the Future's time machine started as a refrigerator. The DeLorean came later.
+The Return of the King won all eleven Oscars it was nominated for.
+Into the Spider-Verse mimics comic printing with dots and hatching.
+Alien's creature performer, Bolaji Badejo, took mime lessons to perfect his movements.
+Jaws' mechanical shark was named Bruce after Spielberg's lawyer. Legal advice apparently had teeth.
+Foley artists recreate movie footsteps in a studio, matching movements filmed earlier.
+Snow White and the Seven Dwarfs earned Walt Disney one full-size Oscar and seven miniature ones.
+Shark ancestors swam the seas before trees existed.
+Reindeer eye reflectors change from gold in summer to blue in winter.
+Wood frogs can survive winter with much of their body water frozen.
+Sea otters stash snacks in loose skin pockets beneath their forearms.
+Mushrooms are more closely related to animals than plants.
+Peanuts are legumes, botanical cousins of peas and beans.
+Natural vanilla comes from the cured fruit of an orchid.
+A pineapple is many individual fruits fused into one.
+Nutmeg and mace are two spices from the same fruit.
+Popcorn pops when trapped water becomes steam and bursts the kernel.
+Pumice can float because gas bubbles make the rock less dense than water.
+Some sand dunes sing when sand avalanches down their slopes.
+Fossilized poop has a scientific name: coprolite.
+Antarctica once had rainforests near the South Pole.
+Land can slowly spring upward after heavy glaciers melt away.
+Benjamin Franklin invented a musical instrument with spinning glass bowls: the glass armonica.
+You play a theremin by moving your hands nearby, without touching it.
+Beethoven completed his Ninth Symphony despite severe hearing loss.
+An 1860 song recording captured on paper became audible in 2008.
+Saxophones are woodwinds, even though their bodies are usually brass.

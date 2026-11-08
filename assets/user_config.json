@@ -1,67 +1,261 @@
 {
-    "dinner_time_1": [[12, 0], [12, 30]],
-    "dinner_time_2": [[18, 30], [19, 0]],
-    "sleep_time": [[23, 0], [9, 0]],
-    "birthday": [12, 17],
-    "idle_trigger_threshold": [100, 200],
-    "idlw_repeat_count": [50, 100],
-    "idle_variants": ["idle_work"],
-    "idle_variants_back": ["idle_bass", "idle_read", "idle_sleep", "idle_swing", "idle_cat", "idle_watermelon", "idle_work"],
-    "mouse_interaction": ["click", "tilt_left", "tilt_right"],
-    "is_interactable": [],
-    "is_not_interactable": [],
-    "face_neutral_ref_to_eye": ["idle_read"],
-    "face_neutral_ref_to_face": ["idle_default", "hover", "dinner", "idle_cat", "idle_idle_watermelon", "idle_work"],
-    "face_blink": ["idle_bass"],
-    "face_none": ["click", "tilt_left", "tilt_right", "idle_sleep", "sleep", "feed_success", "idle_swing"],
-    "default_scale": 1.0,
-    "scale":{
-        "0.4": {
-            "timer_label_scale": 0.6,
-            "timer_label_move": [-5, -60],
-            "timer_label_font_size": 10,
-            "timer_label_font_move": [5, 96],
-            "speech_label_scale": 0.6,
-            "speech_label_move": [0, 0],
-            "speech_label_font_size": 12
-        },
-        "0.7": {
-            "timer_label_scale": 0.95,
-            "timer_label_move": [0, -75],
-            "timer_label_font_size": 14,
-            "timer_label_font_move": [19, 174],
-            "speech_label_scale": 0.9,
-            "speech_label_move": [0, 0],
-            "speech_label_font_size": 13
-        },
-        "1.0": {
-            "timer_label_scale": 1.2,
-            "timer_label_move": [0, -60],
-            "timer_label_font_size": 17,
-            "timer_label_font_move": [24, 253],
-            "speech_label_scale": 1.0,
-            "speech_label_move": [0, 0],
-            "speech_label_font_size": 14
-        },
-        "1.3": {
-            "timer_label_scale": 1.6,
-            "timer_label_move": [0, -90],
-            "timer_label_font_size": 22,
-            "timer_label_font_move": [33, 328],
-            "speech_label_scale": 1.3,
-            "speech_label_move": [0, 0],
-            "speech_label_font_size": 14
-        },
-        "1.6": {
-            "timer_label_scale": 2.0,
-            "timer_label_move": [0, -120],
-            "timer_label_font_size": 32,
-            "timer_label_font_move": [37, 400],
-            "speech_label_scale": 1.6,
-            "speech_label_move": [0, 0],
-            "speech_label_font_size": 14
-        }
-    },
-    "timer_label": "color: black;border-radius: 8px;padding: 4px 8px;font: bold 14px;",
-    "speech_label": "background-color: rgba(255, 255, 255, 200);color: black;border: 1px solid gray;border-radius: 8px;padding: 4px 8px;font: 14px;"
+	"settings": {
+		"pet_scale": 2,
+		"window_scale": 1,
+		"clock_size": 1.5,
+		"startup_enabled": false,
+		"tilt_deadzone": 300,
+		"tilt_fast_threshold": 600,
+		"stat_min": 0,
+		"stat_max": 3,
+		"stat_low_threshold": 2,
+		"stat_decay_interval_seconds": 3600,
+		"initial_mood": 3,
+		"initial_health": 3,
+		"note_window_gap": 0,
+		"timer_window_size": [300, 80],
+		"note_window_size": [300, 200],
+		"pet_window_size": [100, 100],
+		"note_save_delay_seconds": 0.5,
+		"tips_show_seconds": 4,
+		"setting_window_leave_grace_seconds": 0.5
+	},
+	"animations": {
+		"idle": {
+			"type": "idle",
+			"variant_wait_seconds": [100, 200],
+			"variant_play_seconds": [180, 360],
+			"click_interactable": true,
+			"hover_interactable": true,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"idle_work": {
+			"type": "idle_variant",
+			"enabled": true,
+			"repeat_count": null,
+			"click_interactable": false,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"idle_read": {
+			"type": "idle_variant",
+			"enabled": true,
+			"repeat_count": null,
+			"click_interactable": false,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"idle_bass": {
+			"type": "idle_variant",
+			"enabled": true,
+			"repeat_count": null,
+			"click_interactable": false,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"idle_watermelon": {
+			"type": "idle_variant",
+			"enabled": true,
+			"repeat_count": null,
+			"click_interactable": false,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"idle_cat": {
+			"type": "idle_variant",
+			"enabled": true,
+			"repeat_count": null,
+			"click_interactable": false,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"idle_swing": {
+			"type": "idle_variant",
+			"enabled": true,
+			"repeat_count": null,
+			"click_interactable": false,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"hover": {
+			"type": "hover",
+			"click_interactable": true,
+			"hover_interactable": true,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"click": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"click_dinner": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"click_sleep": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_left_slow": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_left_fast": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_right_slow": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_right_fast": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_left_slow_dinner": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_left_fast_dinner": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_right_slow_dinner": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_right_fast_dinner": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_left_slow_sleep": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_left_fast_sleep": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_right_slow_sleep": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"tilt_right_fast_sleep": {
+			"type": "mouse_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"dinner": {
+			"type": "dinner",
+			"time_windows": [[[12, 0], [12, 30]], [[18, 30], [19, 0]]],
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"sleep": {
+			"type": "sleep",
+			"time_window": [[23, 0], [8, 0]],
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"idle_nap": {
+			"type": "idle_nap",
+			"inactivity_seconds": 600,
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"low_health": {
+			"type": "status",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"low_mood": {
+			"type": "status",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"feed_success": {
+			"type": "interaction",
+			"health_gain": 3,
+			"click_interactable": false,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"pet": {
+			"type": "hand_interaction",
+			"mood_gain": 3,
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		},
+		"feed_ignore": {
+			"type": "hand_interaction",
+			"click_interactable": true,
+			"hover_interactable": false,
+			"face_type": "custom",
+			"face_anchor": "face"
+		}
+	}
 }

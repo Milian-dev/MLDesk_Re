@@ -13,7 +13,7 @@ config_version=5
 config/name="ML Desk"
 config/tags=PackedStringArray("milian")
 run/main_scene="uid://ywnyjvin7knc"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://bltkdjy2s1iaq"
 
 [display]

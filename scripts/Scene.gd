@@ -1,35 +1,38 @@
 extends Node2D
 
-const IDLE_VARIANTS := ["idle_read", "idle_bass", "idle_watermelon", "idle_cat", "idle_swing", "idle_work"]
-const IDLE_VARIANT_WAIT_MIN := 60.0
-const IDLE_VARIANT_WAIT_MAX := 90.0
-const IDLE_VARIANT_PLAY_MIN := 180.0
-const IDLE_VARIANT_PLAY_MAX := 360.0
-
-const IDLE_SLEEP_DELAY := 600.0
-const NIGHT_SLEEP_START_HOUR := 23
-const NIGHT_SLEEP_END_HOUR := 9
-const DINNER_TIME := [Vector2i(12, 00), Vector2i(18, 30)]
-const DINNER_DURATION_MINUTES := 30
-
-const TILT_DEADZONE := 300.0
-const TILT_FAST_THRESHOLD := 600.0
-const STAT_MIN := 0
-const STAT_MAX := 3
-const STAT_DECAY_INTERVAL := 1800.0
-const NOTE_WINDOW_GAP := 0
-const BASE_TIMER_WINDOW_SIZE := Vector2i(300, 80)
-const BASE_NOTE_WINDOW_SIZE := Vector2i(300, 200)
+const UserConfig = preload("res://scripts/UserConfig.gd")
 const NOTEBOOK_DIR := "user://data"
 const NOTEBOOK_PATH := "user://data/notebook.txt"
 const CONFIG_PATH := "user://data/config.txt"
 const TIPS_PATH := "res://data/tips.txt"
-const NOTE_SAVE_DELAY := 0.5
 const STARTUP_ENTRY_NAME := "MLDeskPetStartup.cmd"
 const TRAY_MENU_ID_TOGGLE_VISIBILITY := 1
 const TRAY_MENU_ID_QUIT := 2
-const SETTING_WINDOW_LEAVE_GRACE_SECONDS := 0.5
 
+
+# These defaults also keep the pet usable when a config entry is missing or invalid.
+var user_config = UserConfig.new()
+var idle_variants: Array[String] = []
+var idle_variant_wait := Vector2(60.0, 90.0)
+var idle_variant_play := Vector2(180.0, 360.0)
+var idle_sleep_delay := 600.0
+var sleep_time_windows: Array = [[[23, 0], [8, 0]]]
+var dinner_time_windows: Array = [[[12, 0], [12, 30]], [[18, 30], [19, 0]]]
+var tilt_deadzone := 300.0
+var tilt_fast_threshold := 600.0
+var stat_min := 0
+var stat_max := 3
+var stat_low_threshold := 2
+var stat_decay_interval := 3600.0
+var note_window_gap := 0
+var base_pet_window_size := Vector2i(100, 100)
+var base_timer_window_size := Vector2i(300, 80)
+var base_note_window_size := Vector2i(300, 200)
+var note_save_delay := 0.5
+var setting_window_leave_grace_seconds := 0.5
+var animation_face_anchors: Dictionary = {}
+var active_animation_config: Dictionary = {}
+var active_face_anchor: Node2D
 
 var pet_scale := 2.0
 var window_scale := 1.0
@@ -43,16 +46,19 @@ var last_mouse_global := Vector2.ZERO
 var drag_velocity_x := 0.0
 
 var is_dragging = false
+var drag_changes_animation := false
+var drag_idle_timer_was_paused := false
 var is_hovering = false
 
 var is_sleeping = false
 var is_dinner_time = false
 var is_idle_napping = false
 var is_idle_variant_playing = false
+var last_idle_variant := ""
 var is_hand_interaction_playing = false
 var is_interactible := true
-var mood := 2
-var health := 2
+var mood := 3
+var health := 3
 var low_mood_acknowledged := false
 var low_health_acknowledged := false
 var timer_seconds_remaining := 0
@@ -77,6 +83,8 @@ var setting_window_open_time := 0.0
 @onready var area_hit: Area2D = $Milian/area_hit
 @onready var collision_shape: CollisionShape2D = $Milian/area_hit/collision_hit
 @onready var body_node = $Milian/body
+@onready var face_marker: Marker2D = $Milian/body/face_marker
+@onready var face_sprite: AnimatedSprite2D = $Milian/body/face_marker/face
 @onready var hand_sprite: AnimatedSprite2D = $Milian/body/hand_marker/hand
 @onready var status_mood: AnimatedSprite2D = $Milian/body/status_mood
 @onready var status_health: AnimatedSprite2D = $Milian/body/status_health
@@ -109,6 +117,7 @@ var setting_window_open_time := 0.0
 
 
 func _ready() -> void:
+	_load_user_config()
 	_setup_window()
 	_setup_setting_window()
 	_setup_notebook()
@@ -118,6 +127,7 @@ func _ready() -> void:
 	_restore_saved_pet_position()
 	_setup_system_tray()
 	_connect_signals()
+	anim_player.animation_started.connect(_on_animation_started)
 
 	await get_tree().process_frame
 	_update_mouse_mask()
@@ -131,6 +141,96 @@ func _ready() -> void:
 	_schedule_next_idle_variant()
 	
 
+func _load_user_config() -> void:
+	user_config.load_file()
+	var settings: Dictionary = user_config.settings
+	pet_scale = user_config.number(settings, "pet_scale", pet_scale, slider_pet_size.min_value, slider_pet_size.max_value)
+	window_scale = user_config.number(settings, "window_scale", window_scale, 0.1)
+	clock_size = user_config.number(settings, "clock_size", clock_size, 0.1)
+	startup_enabled = user_config.boolean(settings, "startup_enabled", startup_enabled)
+	tilt_deadzone = user_config.number(settings, "tilt_deadzone", tilt_deadzone, 0.0)
+	tilt_fast_threshold = user_config.number(settings, "tilt_fast_threshold", tilt_fast_threshold, tilt_deadzone)
+	# Status frames are supplied by the sprite sheet, so configured bounds must fit it.
+	var last_status_frame = mini(status_mood.sprite_frames.get_frame_count(status_mood.animation), status_health.sprite_frames.get_frame_count(status_health.animation)) - 1
+	stat_min = int(user_config.number(settings, "stat_min", stat_min, 0, last_status_frame))
+	stat_max = int(user_config.number(settings, "stat_max", stat_max, stat_min, last_status_frame))
+	stat_low_threshold = int(user_config.number(settings, "stat_low_threshold", stat_low_threshold, stat_min, stat_max))
+	stat_decay_interval = user_config.number(settings, "stat_decay_interval_seconds", stat_decay_interval, 0.1)
+	mood = int(user_config.number(settings, "initial_mood", mood, stat_min, stat_max))
+	health = int(user_config.number(settings, "initial_health", health, stat_min, stat_max))
+	note_window_gap = int(user_config.number(settings, "note_window_gap", note_window_gap))
+	base_pet_window_size = user_config.size_value(settings, "pet_window_size", base_pet_window_size)
+	base_timer_window_size = user_config.size_value(settings, "timer_window_size", base_timer_window_size)
+	base_note_window_size = user_config.size_value(settings, "note_window_size", base_note_window_size)
+	note_save_delay = user_config.number(settings, "note_save_delay_seconds", note_save_delay, 0.01)
+	tips_show_time = user_config.number(settings, "tips_show_seconds", tips_show_time, 0.01)
+	setting_window_leave_grace_seconds = user_config.number(settings, "setting_window_leave_grace_seconds", setting_window_leave_grace_seconds, 0.0)
+	var idle_config: Dictionary = user_config.state("idle")
+	idle_variant_wait = user_config.range_value(idle_config, "variant_wait_seconds", idle_variant_wait, 0.01)
+	idle_variant_play = user_config.range_value(idle_config, "variant_play_seconds", idle_variant_play, 0.01)
+	idle_sleep_delay = user_config.number(user_config.state("idle_nap"), "inactivity_seconds", idle_sleep_delay, 0.0)
+	var sleep_config: Dictionary = user_config.state("sleep")
+	sleep_time_windows = user_config.time_windows({"windows": [sleep_config.get("time_window", sleep_time_windows[0])]}, "windows", sleep_time_windows)
+	dinner_time_windows = user_config.time_windows(user_config.state("dinner"), "time_windows", dinner_time_windows)
+
+	idle_variants.clear()
+	animation_face_anchors.clear()
+	var animation_names = Array(anim_player.get_animation_list())
+	animation_names.append_array(hand_sprite.sprite_frames.get_animation_names())
+	for animation_name in animation_names:
+		if animation_name == "RESET":
+			continue
+		var config: Dictionary = user_config.state(animation_name)
+		if config.get("type", "") == "idle_variant" and user_config.boolean(config, "enabled", true):
+			idle_variants.append(animation_name)
+		var anchor_name = config.get("face_anchor", "face")
+		var anchor: Node2D = face_marker
+		if anchor_name is String and anchor_name != "face":
+			var anchor_path = anchor_name
+			if body_node.has_node(anchor_name + "_marker"):
+				anchor_path = anchor_name + "_marker"
+			var configured_anchor = body_node.get_node_or_null(anchor_path)
+			if configured_anchor is Node2D and configured_anchor != face_sprite and not face_sprite.is_ancestor_of(configured_anchor):
+				anchor = configured_anchor
+			else:
+				push_warning("Unknown face anchor '%s' for %s; using face." % [anchor_name, animation_name])
+		animation_face_anchors[animation_name] = anchor
+	# Missing or malformed animation settings keep the existing animation set.
+	if not user_config.animations_valid:
+		for animation_name in anim_player.get_animation_list():
+			if animation_name.begins_with("idle_") and animation_name != "idle_nap" and not animation_name.ends_with("_enter"):
+				idle_variants.append(animation_name)
+
+
+func _on_animation_started(animation_name: StringName) -> void:
+	if is_hand_interaction_playing:
+		animation_name = hand_sprite.animation
+	active_animation_config = user_config.state(animation_name)
+	active_face_anchor = animation_face_anchors.get(animation_name, face_marker)
+	_update_face()
+
+
+func _update_face() -> void:
+	var face_type = active_animation_config.get("face_type", "custom")
+	face_sprite.visible = face_type != "none"
+	if not face_sprite.visible:
+		return
+	if active_face_anchor == null or active_face_anchor == face_marker:
+		face_sprite.position = Vector2.ZERO
+	else:
+		face_sprite.global_position = active_face_anchor.global_position
+	if face_type == "neutral":
+		face_sprite.frame = 0
+	elif face_type == "blink":
+		face_sprite.frame = mini(2, face_sprite.sprite_frames.get_frame_count(face_sprite.animation) - 1)
+
+
+func _state_allows_interaction(key: String, fallback: bool = true) -> bool:
+	if not user_config.boolean(user_config.state(anim_player.current_animation), key, fallback):
+		return false
+	return not is_hand_interaction_playing or user_config.boolean(user_config.state(hand_sprite.animation), key, true)
+
+
 func _setup_window() -> void:
 	var window = get_window()
 
@@ -140,8 +240,7 @@ func _setup_window() -> void:
 	window.always_on_top = true
 	window.unresizable = false
 
-	var base_size = Vector2i(100, 100)
-	window.size = base_size * pet_scale
+	window.size = Vector2i(Vector2(base_pet_window_size) * pet_scale)
 
 	var usable_rect = DisplayServer.screen_get_usable_rect()
 	var target_y = usable_rect.end.y - window.size.y
@@ -208,7 +307,7 @@ func _setup_notebook() -> void:
 
 	note_save_timer = Timer.new()
 	note_save_timer.one_shot = true
-	note_save_timer.wait_time = NOTE_SAVE_DELAY
+	note_save_timer.wait_time = note_save_delay
 	add_child(note_save_timer)
 	if not note_save_timer.timeout.is_connected(_save_note_text):
 		note_save_timer.timeout.connect(_save_note_text)
@@ -281,7 +380,7 @@ func _apply_scale() -> void:
 	$Milian.scale = Vector2(pet_scale, pet_scale)
 	var window = get_window()
 	var current_position = window.position
-	window.size = Vector2i(Vector2(100, 100) * pet_scale)
+	window.size = Vector2i(Vector2(base_pet_window_size) * pet_scale)
 	window.position = _clamp_pet_position(current_position)
 
 
@@ -330,9 +429,9 @@ func _apply_window_scale() -> void:
 	clock_sprite.scale = scale_vec * clock_size
 
 	setting_window.size = Vector2i(Vector2(setting_ui.size) * window_scale)
-	timer_window.size = Vector2i(Vector2(BASE_TIMER_WINDOW_SIZE) * window_scale)
-	note_window.size = Vector2i(Vector2(BASE_NOTE_WINDOW_SIZE) * window_scale)
-	tip_window.size = Vector2i(Vector2(BASE_NOTE_WINDOW_SIZE) * window_scale)
+	timer_window.size = Vector2i(Vector2(base_timer_window_size) * window_scale)
+	note_window.size = Vector2i(Vector2(base_note_window_size) * window_scale)
+	tip_window.size = Vector2i(Vector2(base_note_window_size) * window_scale)
 
 
 func _connect_signals() -> void:
@@ -407,6 +506,8 @@ func UPDATE():
 
 
 func _process(_delta: float) -> void:
+	# Apply face overrides after AnimationPlayer has evaluated its authored tracks.
+	_update_face.call_deferred()
 	_update_hover_state()
 	_update_sleep_state()
 	_update_dinner_state()
@@ -480,13 +581,9 @@ func _input(event) -> void:
 			_show_setting_window_at_mouse()
 
 func _update_hover_state() -> void:
-	if _is_feed_success_playing():
+	if is_dragging:
 		return
-
-	if is_dinner_time:
-		return
-
-	if is_idle_variant_playing:
+	if not _state_allows_interaction("hover_interactable", not (is_dinner_time or is_idle_variant_playing or _is_feed_success_playing())):
 		return
 
 	var hover_now = _is_mouse_on_pet()
@@ -496,7 +593,7 @@ func _update_hover_state() -> void:
 
 	is_hovering = hover_now
 
-	if is_dragging or is_sleeping or is_idle_napping:
+	if is_sleeping or is_idle_napping:
 		return
 
 	if is_hovering:
@@ -511,20 +608,20 @@ func _update_hover_state() -> void:
 		_schedule_next_idle_variant()
 
 func _update_drag_tilt() -> void:
-	if not is_dragging:
+	if not is_dragging or not drag_changes_animation:
 		return
 
-	if abs(drag_velocity_x) <= TILT_DEADZONE:
+	if abs(drag_velocity_x) <= tilt_deadzone:
 		_play_interaction_variant_anim("click")
 		return
 
 	if drag_velocity_x < 0.0:
-		if abs(drag_velocity_x) >= TILT_FAST_THRESHOLD:
+		if abs(drag_velocity_x) >= tilt_fast_threshold:
 			_play_interaction_variant_anim("tilt_left_fast")
 		else:
 			_play_interaction_variant_anim("tilt_left_slow")
 	else:
-		if abs(drag_velocity_x) >= TILT_FAST_THRESHOLD:
+		if abs(drag_velocity_x) >= tilt_fast_threshold:
 			_play_interaction_variant_anim("tilt_right_fast")
 		else:
 			_play_interaction_variant_anim("tilt_right_slow")
@@ -573,7 +670,7 @@ func _close_setting_window_if_mouse_left() -> void:
 	if not setting_window.visible:
 		return
 
-	if Time.get_unix_time_from_system() - setting_window_open_time < SETTING_WINDOW_LEAVE_GRACE_SECONDS:
+	if Time.get_unix_time_from_system() - setting_window_open_time < setting_window_leave_grace_seconds:
 		return
 
 	if _is_mouse_on_setting_window():
@@ -1065,6 +1162,7 @@ func _play_hand_interaction(animation_name: String, blocked_button: Button) -> v
 	_refresh_interactible()
 	blocked_button.disabled = true
 	hand_sprite.animation = animation_name
+	_on_animation_started(anim_player.current_animation)
 	hand_sprite.frame = 0
 	hand_sprite.show()
 	hand_sprite.play(animation_name)
@@ -1077,7 +1175,7 @@ func _play_feed_success() -> void:
 		return
 
 	low_health_acknowledged = true
-	anim_player.play("feed_success")
+	_play_anim("feed_success")
 	_refresh_interactible()
 	_finish_feed_success.call_deferred()
 
@@ -1091,7 +1189,7 @@ func _finish_feed_success() -> void:
 	_refresh_interactible()
 
 	if not is_sleeping:
-		_change_health(2)
+		_change_health(int(user_config.number(user_config.state("feed_success"), "health_gain", 3, 0)))
 		last_feed_time = Time.get_unix_time_from_system()
 
 	if is_dragging:
@@ -1103,13 +1201,9 @@ func _finish_feed_success() -> void:
 		_enter_idle_nap_state()
 		return
 
-	is_hovering = _is_mouse_on_pet()
-
-	if is_hovering and not _is_any_status_low() and not is_dinner_time:
-		_play_anim("hover")
-		return
-
+	is_hovering = false
 	_enter_idle_state()
+	_update_hover_state()
 	_schedule_next_idle_variant()
 
 
@@ -1119,9 +1213,10 @@ func _finish_hand_interaction(animation_name: String, blocked_button: Button) ->
 	hand_sprite.stop()
 	hand_sprite.hide()
 	is_hand_interaction_playing = false
+	_on_animation_started(anim_player.current_animation)
 	blocked_button.disabled = false
 	if animation_name == "pet" and not is_sleeping:
-		_change_mood(2)
+		_change_mood(int(user_config.number(user_config.state("pet"), "mood_gain", 3, 0)))
 		low_mood_acknowledged = true
 		last_pet_time = Time.get_unix_time_from_system()
 	_refresh_interactible()
@@ -1144,12 +1239,12 @@ func _update_stats_decay() -> void:
 
 	var now = Time.get_unix_time_from_system()
 
-	while mood > STAT_MIN and now - last_pet_time >= STAT_DECAY_INTERVAL:
-		last_pet_time += STAT_DECAY_INTERVAL
+	while mood > stat_min and now - last_pet_time >= stat_decay_interval:
+		last_pet_time += stat_decay_interval
 		_change_mood(-1)
 
-	while health > STAT_MIN and now - last_feed_time >= STAT_DECAY_INTERVAL:
-		last_feed_time += STAT_DECAY_INTERVAL
+	while health > stat_min and now - last_feed_time >= stat_decay_interval:
+		last_feed_time += stat_decay_interval
 		_change_health(-1)
 
 
@@ -1157,13 +1252,13 @@ func _change_mood(amount: int, allow_while_sleeping: bool = false) -> void:
 	if is_sleeping and not allow_while_sleeping:
 		return
 
-	var next_value = clampi(mood + amount, STAT_MIN, STAT_MAX)
+	var next_value = clampi(mood + amount, stat_min, stat_max)
 	if next_value == mood:
 		return
 
-	if next_value < 2 and next_value < mood:
+	if next_value < stat_low_threshold and next_value < mood:
 		low_mood_acknowledged = false
-	elif next_value >= 2:
+	elif next_value >= stat_low_threshold:
 		low_mood_acknowledged = false
 
 	mood = next_value
@@ -1175,13 +1270,13 @@ func _change_health(amount: int, allow_while_sleeping: bool = false) -> void:
 	if is_sleeping and not allow_while_sleeping:
 		return
 
-	var next_value = clampi(health + amount, STAT_MIN, STAT_MAX)
+	var next_value = clampi(health + amount, stat_min, stat_max)
 	if next_value == health:
 		return
 
-	if next_value < 2 and next_value < health:
+	if next_value < stat_low_threshold and next_value < health:
 		low_health_acknowledged = false
-	elif next_value >= 2:
+	elif next_value >= stat_low_threshold:
 		low_health_acknowledged = false
 
 	health = next_value
@@ -1193,13 +1288,13 @@ func _set_mood(value: int, allow_while_sleeping: bool = false) -> void:
 	if is_sleeping and not allow_while_sleeping:
 		return
 
-	var next_value = clampi(value, STAT_MIN, STAT_MAX)
+	var next_value = clampi(value, stat_min, stat_max)
 	if next_value == mood:
 		return
 
-	if next_value < 2 and next_value < mood:
+	if next_value < stat_low_threshold and next_value < mood:
 		low_mood_acknowledged = false
-	elif next_value >= 2:
+	elif next_value >= stat_low_threshold:
 		low_mood_acknowledged = false
 
 	mood = next_value
@@ -1211,13 +1306,13 @@ func _set_health(value: int, allow_while_sleeping: bool = false) -> void:
 	if is_sleeping and not allow_while_sleeping:
 		return
 
-	var next_value = clampi(value, STAT_MIN, STAT_MAX)
+	var next_value = clampi(value, stat_min, stat_max)
 	if next_value == health:
 		return
 
-	if next_value < 2 and next_value < health:
+	if next_value < stat_low_threshold and next_value < health:
 		low_health_acknowledged = false
-	elif next_value >= 2:
+	elif next_value >= stat_low_threshold:
 		low_health_acknowledged = false
 
 	health = next_value
@@ -1263,7 +1358,7 @@ func _position_note_window() -> void:
 		usable_rect.end.x - note_window.size.x
 	)
 	var clamped_y = clampi(
-		timer_pos.y - note_window.size.y - NOTE_WINDOW_GAP,
+		timer_pos.y - note_window.size.y - note_window_gap,
 		usable_rect.position.y,
 		usable_rect.end.y - note_window.size.y
 	)
@@ -1284,7 +1379,7 @@ func _position_tip_window() -> void:
 		usable_rect.end.x - tip_window.size.x
 	)
 	var clamped_y = clampi(
-		timer_pos.y + timer_size.y + NOTE_WINDOW_GAP -100,
+		timer_pos.y + timer_size.y + note_window_gap -100,
 		usable_rect.position.y,
 		usable_rect.end.y - tip_window.size.y
 	)
@@ -1367,32 +1462,48 @@ func _is_mouse_on_clock() -> bool:
 
 
 func _start_drag() -> void:
+	# Mouse actions always work; this flag only controls the drag's visual reaction.
+	drag_changes_animation = _state_allows_interaction("click_interactable", not is_idle_variant_playing)
+	drag_idle_timer_was_paused = idle_variant_timer.paused
 	is_dragging = true
-	is_hovering = true
-	is_idle_variant_playing = false
 	drag_velocity_x = 0.0
 	last_mouse_global = Vector2(DisplayServer.mouse_get_position())
 	_mark_mouse_active()
-	idle_variant_timer.stop()
-	_refresh_interactible()
+	if drag_changes_animation:
+		is_hovering = true
+		is_idle_variant_playing = false
+		idle_variant_timer.stop()
+		_play_interaction_variant_anim("click")
+	else:
+		# Keep the existing animation and resume its remaining duration after dragging.
+		idle_variant_timer.paused = true
 
-	_play_interaction_variant_anim("click")
+	_refresh_interactible()
 	drag_offset = Vector2(DisplayServer.mouse_get_position()) - Vector2(DisplayServer.window_get_position())
 
 func _stop_drag() -> void:
 	is_dragging = false
-	_refresh_interactible()
-	_update_hover_state()
+	if not drag_changes_animation:
+		idle_variant_timer.paused = drag_idle_timer_was_paused
+		# A one-shot animation may have finished naturally while it was carried.
+		if not anim_player.is_playing():
+			is_hovering = false
+			_refresh_base_anim_state()
+			_update_hover_state()
+		_refresh_interactible()
+		return
+	drag_changes_animation = false
+	is_hovering = false
 
 	if is_sleeping:
 		_enter_night_sleep_state()
 	elif is_idle_napping:
 		_enter_idle_nap_state()
-	elif is_hovering and not _is_any_status_low() and not is_dinner_time:
-		_play_anim("hover")
 	else:
 		_enter_idle_state()
+		_update_hover_state()
 		_schedule_next_idle_variant()
+	_refresh_interactible()
 
 func IDLE():
 	pass
@@ -1403,7 +1514,26 @@ func _schedule_next_idle_variant() -> void:
 		return
 
 	is_idle_variant_playing = false
-	idle_variant_timer.start(randf_range(IDLE_VARIANT_WAIT_MIN, IDLE_VARIANT_WAIT_MAX))
+	idle_variant_timer.start(randf_range(idle_variant_wait.x, idle_variant_wait.y))
+
+
+func _get_idle_variant_candidates() -> Array[String]:
+	var candidates: Array[String] = idle_variants.duplicate()
+	if candidates.size() > 1:
+		candidates.erase(last_idle_variant)
+	return candidates
+
+
+func _get_idle_variant_duration(animation_name: String) -> float:
+	var config: Dictionary = user_config.state(animation_name)
+	if config.get("repeat_count") != null:
+		var repeats: Vector2 = user_config.range_value(config, "repeat_count", Vector2.ZERO, 1.0)
+		if repeats != Vector2.ZERO:
+			var count = randi_range(int(ceil(repeats.x)), maxi(int(ceil(repeats.x)), int(floor(repeats.y))))
+			var animation = anim_player.get_animation(animation_name)
+			return maxf(0.01, animation.length * count / maxf(absf(anim_player.speed_scale), 0.001))
+	var play_seconds: Vector2 = user_config.range_value(config, "play_seconds", idle_variant_play, 0.01)
+	return randf_range(play_seconds.x, play_seconds.y)
 
 
 func _on_timer_idle_variant_timeout() -> void:
@@ -1411,25 +1541,27 @@ func _on_timer_idle_variant_timeout() -> void:
 		return
 
 	if not is_idle_variant_playing:
-		is_idle_variant_playing = true
-
-		var candidates = IDLE_VARIANTS.duplicate()
-		var current_anim = anim_player.current_animation
-
-		if current_anim in candidates and candidates.size() > 1:
-			candidates.erase(current_anim)
+		var candidates = _get_idle_variant_candidates()
+		if candidates.is_empty():
+			return
 
 		var next_anim = candidates[randi() % candidates.size()]
+		is_idle_variant_playing = true
+		last_idle_variant = next_anim
 		_play_anim(next_anim)
 
-		idle_variant_timer.start(randf_range(IDLE_VARIANT_PLAY_MIN, IDLE_VARIANT_PLAY_MAX))
+		idle_variant_timer.start(_get_idle_variant_duration(next_anim))
 	else:
+		is_idle_variant_playing = false
+		# Hover may have changed while this variant disabled hover reactions.
+		is_hovering = false
+		_enter_idle_state()
+		_update_hover_state()
 		_refresh_base_anim_state()
-		_schedule_next_idle_variant()
 
 
 func _can_play_idle_variant() -> bool:
-	return not is_dragging and not is_hovering and not is_sleeping and not is_dinner_time and not is_idle_napping and not _is_feed_success_playing()
+	return not idle_variants.is_empty() and not is_dragging and not is_hovering and not is_sleeping and not is_dinner_time and not is_idle_napping and not _is_feed_success_playing()
 
 
 func SLEEP():
@@ -1440,14 +1572,21 @@ func _get_current_dinner_window() -> int:
 	var dt = Time.get_datetime_dict_from_system()
 	var minutes = int(dt.hour) * 60 + int(dt.minute)
 
-	for index in range(DINNER_TIME.size()):
-		var dinner_start = DINNER_TIME[index]
-		var start_minutes = dinner_start.x * 60 + dinner_start.y
-		var end_minutes = start_minutes + DINNER_DURATION_MINUTES
-		if minutes >= start_minutes and minutes < end_minutes:
+	for index in range(dinner_time_windows.size()):
+		if _is_in_time_window(minutes, dinner_time_windows[index]):
 			return index
 
 	return -1
+
+
+func _is_in_time_window(minutes: int, time_window: Array) -> bool:
+	var start_minutes = int(time_window[0][0]) * 60 + int(time_window[0][1])
+	var end_minutes = int(time_window[1][0]) * 60 + int(time_window[1][1])
+	if start_minutes < end_minutes:
+		return minutes >= start_minutes and minutes < end_minutes
+	if start_minutes > end_minutes:
+		return minutes >= start_minutes or minutes < end_minutes
+	return false
 
 
 func _get_dinner_key(dinner_window: int) -> String:
@@ -1498,7 +1637,7 @@ func _exit_dinner_state() -> void:
 
 	if not finished_dinner_key.is_empty() and rewarded_dinner_key != finished_dinner_key:
 		rewarded_dinner_key = finished_dinner_key
-		_set_health(STAT_MAX)
+		_set_health(stat_max)
 		last_feed_time = Time.get_unix_time_from_system()
 
 	_refresh_base_anim_state()
@@ -1506,15 +1645,18 @@ func _exit_dinner_state() -> void:
 
 func _is_night_sleep_time() -> bool:
 	var dt = Time.get_datetime_dict_from_system()
-	var hour = dt.hour
-	return hour >= NIGHT_SLEEP_START_HOUR or hour < NIGHT_SLEEP_END_HOUR
+	var minutes = int(dt.hour) * 60 + int(dt.minute)
+	for time_window in sleep_time_windows:
+		if _is_in_time_window(minutes, time_window):
+			return true
+	return false
 
 
 func _update_sleep_state() -> void:
 	var should_night_sleep = _is_night_sleep_time()
 	var now = Time.get_unix_time_from_system()
 	var inactive_seconds = now - last_mouse_move_time
-	var should_idle_nap = inactive_seconds >= IDLE_SLEEP_DELAY
+	var should_idle_nap = inactive_seconds >= idle_sleep_delay
 
 	if should_night_sleep:
 		if not is_sleeping:
@@ -1558,7 +1700,7 @@ func _enter_night_sleep_state() -> void:
 
 func _exit_night_sleep_state() -> void:
 	is_sleeping = false
-	_set_mood(STAT_MAX, true)
+	_set_mood(stat_max, true)
 	var now = Time.get_unix_time_from_system()
 	last_pet_time = now
 	last_feed_time = now
@@ -1566,7 +1708,7 @@ func _exit_night_sleep_state() -> void:
 
 	var inactive_seconds = Time.get_unix_time_from_system() - last_mouse_move_time
 
-	if inactive_seconds >= IDLE_SLEEP_DELAY and not is_dinner_time:
+	if inactive_seconds >= idle_sleep_delay and not is_dinner_time:
 		_enter_idle_nap_state()
 	elif is_hovering and not _is_any_status_low() and not is_dinner_time:
 		_play_anim("hover")
@@ -1634,15 +1776,15 @@ func _is_feed_success_playing() -> bool:
 
 
 func _get_low_state_animation() -> String:
-	if health < 2 and not low_health_acknowledged:
+	if health < stat_low_threshold and not low_health_acknowledged:
 		return "low_health"
-	if mood < 2 and not low_mood_acknowledged:
+	if mood < stat_low_threshold and not low_mood_acknowledged:
 		return "low_mood"
 	return ""
 
 
 func _is_any_status_low() -> bool:
-	return health < 2 or mood < 2
+	return health < stat_low_threshold or mood < stat_low_threshold
 
 
 func _refresh_base_anim_state() -> void:
